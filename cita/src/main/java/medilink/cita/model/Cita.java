@@ -22,5 +22,7 @@ public class Cita {
     private String estadoCita;
     private String motivoCita;
     private String observacionesCita;
+
+    //
     private Date fechaCreacionCita;
 }
