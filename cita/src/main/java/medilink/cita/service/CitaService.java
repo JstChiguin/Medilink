@@ -31,7 +31,7 @@ public class CitaService {
                 citaAux.getIdAgenda().equals(cita.getIdAgenda());
                 citaAux.setFechaCita(cita.getFechaCita());
                 citaAux.setHoraCita(cita.getHoraCita());
-                                
+
 
 
             }
