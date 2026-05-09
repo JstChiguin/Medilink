@@ -27,7 +27,7 @@ public class Cita {
 
     @ManyToOne
     @Column(name = "paciente", nullable = false)
-    private Paciente paciente; //FK
+    private Long idPaciente; //FK
 
     @ManyToOne
     private Profesional profesional; //FK
