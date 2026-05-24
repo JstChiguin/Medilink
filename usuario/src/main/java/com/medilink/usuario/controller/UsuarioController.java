@@ -5,6 +5,7 @@ import com.medilink.usuario.dto.request.UsuarioRequest;
 import com.medilink.usuario.dto.response.UsuarioResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/usuarios")
 @RequiredArgsConstructor
+
 
 public class UsuarioController {
 
@@ -33,15 +35,14 @@ public class UsuarioController {
     public ResponseEntity<UsuarioResponse> crearUsuario(@Valid @RequestBody UsuarioRequest usuarioRequest){
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.crear(usuarioRequest));
     }
-
     @DeleteMapping("/{idUsuario}")
-    public ResponseEntity<Void> eliminarUsuario(@PathVariable Long idUsuario){
-    usuarioService.eliminar(idUsuario);
-    return  ResponseEntity.noContent().build();
+    public ResponseEntity<String> eliminarUsuario(@PathVariable Long idUsuario){
+        usuarioService.eliminar(idUsuario);
+        return ResponseEntity.ok("Usuario eliminado correctamente");
     }
 
     @PutMapping("/{idUsuario}")
-    public ResponseEntity<UsuarioResponse> actualizarUsuario(@Valid @PathVariable Long idUsuario, @RequestBody UsuarioRequest usuarioRequest){
+    public ResponseEntity<UsuarioResponse> actualizarUsuario( @PathVariable Long idUsuario,@Valid @RequestBody UsuarioRequest usuarioRequest){
         return ResponseEntity.ok().body(usuarioService.actualizar(idUsuario, usuarioRequest));
     }
 }

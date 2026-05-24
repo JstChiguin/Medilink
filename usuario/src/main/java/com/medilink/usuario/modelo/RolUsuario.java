@@ -6,10 +6,22 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum RolUsuario {
-
-    // Roles disponibles en el sistema
     Medico,
     Paciente,
     Administrador;
+
+    public static RolUsuario fromValor(String valor) {
+
+        for (RolUsuario rol : values()) {
+
+            if (rol.name().equalsIgnoreCase(valor.trim())) {
+                return rol;
+            }
+        }
+
+        throw new IllegalArgumentException(
+                "Rol inválido: " + valor
+        );
+    }
 
 }

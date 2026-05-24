@@ -19,7 +19,7 @@ public class Usuario {
     @Column(name = "correo_usuario",nullable = false, unique = true, length = 150)
     private String correoUsuario;
 
-    @Column(name = "contrasenna_usuario",nullable = false, unique = true, length = 50)
+    @Column(name = "contrasenna_usuario",nullable = false, length = 50)
     private String contrasennaUsuario;
 
     @Column(name = "rol_usuario",nullable = false)
@@ -30,4 +30,5 @@ public class Usuario {
 
     @Column( name = "fecha_registro", nullable = false, length = 50)
     private LocalDate fechaRegistroUsuario;
+
 }
