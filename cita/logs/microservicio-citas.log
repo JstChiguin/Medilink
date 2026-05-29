@@ -1,0 +1,118 @@
+2026-05-29T00:28:13.801-04:00  INFO 25276 --- [citas] [main] medilink.cita.CitaApplication            : Starting CitaApplication using Java 25 with PID 25276 (C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\cita\cita\target\classes started by chigu in C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\cita\cita)
+2026-05-29T00:28:13.806-04:00  INFO 25276 --- [citas] [main] medilink.cita.CitaApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-29T00:28:14.300-04:00  INFO 25276 --- [citas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-29T00:28:14.342-04:00  INFO 25276 --- [citas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interface.
+2026-05-29T00:28:14.422-04:00  INFO 25276 --- [citas] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8a0d64ae-0c56-3358-abda-44218cd49817
+2026-05-29T00:28:14.661-04:00  INFO 25276 --- [citas] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 3006 (http)
+2026-05-29T00:28:14.672-04:00  INFO 25276 --- [citas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-29T00:28:14.673-04:00  INFO 25276 --- [citas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-29T00:28:14.714-04:00  INFO 25276 --- [citas] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 868 ms
+2026-05-29T00:28:14.997-04:00  INFO 25276 --- [citas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-29T00:28:15.111-04:00  INFO 25276 --- [citas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@63124022
+2026-05-29T00:28:15.112-04:00  INFO 25276 --- [citas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-29T00:28:15.162-04:00  INFO 25276 --- [citas] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/citas (MySQL 5.5)
+2026-05-29T00:28:15.187-04:00  INFO 25276 --- [citas] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `citas`.`flyway_schema_history` does not exist yet
+2026-05-29T00:28:15.189-04:00  INFO 25276 --- [citas] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.012s)
+2026-05-29T00:28:15.218-04:00  INFO 25276 --- [citas] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `citas`.`flyway_schema_history` ...
+2026-05-29T00:28:15.262-04:00  INFO 25276 --- [citas] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `citas`: << Empty Schema >>
+2026-05-29T00:28:15.269-04:00  INFO 25276 --- [citas] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `citas` to version "1 - crear tablas"
+2026-05-29T00:28:15.289-04:00  INFO 25276 --- [citas] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `citas` to version "2 - insertar citas"
+2026-05-29T00:28:15.300-04:00  INFO 25276 --- [citas] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `citas`, now at version v2 (execution time 00:00.009s)
+2026-05-29T00:28:15.363-04:00  INFO 25276 --- [citas] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-29T00:28:15.412-04:00  INFO 25276 --- [citas] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-29T00:28:15.745-04:00  INFO 25276 --- [citas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-29T00:28:15.787-04:00  WARN 25276 --- [citas] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-29T00:28:15.790-04:00  WARN 25276 --- [citas] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29T00:28:15.800-04:00  INFO 25276 --- [citas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/citas]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: citas/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-29T00:28:16.399-04:00  INFO 25276 --- [citas] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-29T00:28:16.433-04:00  INFO 25276 --- [citas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T00:28:16.485-04:00  INFO 25276 --- [citas] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-29T00:28:16.617-04:00  WARN 25276 --- [citas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-29T00:28:17.833-04:00  INFO 25276 --- [citas] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T00:28:17.870-04:00  INFO 25276 --- [citas] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 3006 (http) with context path '/'
+2026-05-29T00:28:18.877-04:00  INFO 25276 --- [citas] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T00:28:18.883-04:00  INFO 25276 --- [citas] [main] medilink.cita.CitaApplication            : Started CitaApplication in 6.458 seconds (process running for 6.924)
+2026-05-29T00:31:23.528-04:00  INFO 25276 --- [citas] [http-nio-3006-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-29T00:31:23.528-04:00  INFO 25276 --- [citas] [http-nio-3006-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-29T00:31:23.534-04:00  INFO 25276 --- [citas] [http-nio-3006-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2026-05-29T00:31:23.553-04:00  INFO 25276 --- [citas] [http-nio-3006-exec-1] medilink.cita.service.CitaService        : Obteniendo listado de citas
+2026-05-29T00:32:53.043-04:00  INFO 25276 --- [citas] [http-nio-3006-exec-6] medilink.cita.service.CitaService        : Creando nueva cita: CitaRequest(idPaciente=111, idProfesional=211, idAgenda=11, fechaCita=2026-06-01, horaCita=10:00, modalidadAtencionCita=PRESENCIAL, estadoCita=PENDIENTE, motivoCita=Control médico, observacionesCita=Primera consulta, fechaCreacionCita=2026-05-29)
+2026-05-29T00:33:48.749-04:00 ERROR 25276 --- [citas] [http-nio-3006-exec-8] medilink.cita.service.CitaService        : Intento de agendar cita en domingo
+2026-05-29T00:33:48.756-04:00 ERROR 25276 --- [citas] [http-nio-3006-exec-8] m.cita.exception.GlobalExceptionHandler  : No se pueden agendar citas los domingos
+2026-05-29T00:35:31.446-04:00  INFO 25276 --- [citas] [http-nio-3006-exec-7] medilink.cita.service.CitaService        : Cita con id 11 actualizada correctamente
+2026-05-29T00:36:31.865-04:00  INFO 25276 --- [citas] [http-nio-3006-exec-2] medilink.cita.service.CitaService        : Cita con id 11 eliminada correctamente
+2026-05-29T00:37:39.739-04:00  INFO 25276 --- [citas] [http-nio-3006-exec-3] medilink.cita.service.CitaService        : Se está obteniendo una citación con id 11
+2026-05-29T00:37:39.739-04:00 ERROR 25276 --- [citas] [http-nio-3006-exec-3] m.cita.exception.GlobalExceptionHandler  : No existe una cita con el id: 11
+2026-05-29T00:42:06.954-04:00  INFO 25276 --- [citas] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-29T00:42:06.962-04:00  INFO 25276 --- [citas] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-29T00:42:06.964-04:00  INFO 25276 --- [citas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T00:42:06.966-04:00  INFO 25276 --- [citas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-29T00:42:06.969-04:00  INFO 25276 --- [citas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-29T16:04:20.966-04:00  INFO 13460 --- [citas] [main] medilink.cita.CitaApplication            : Starting CitaApplication using Java 25 with PID 13460 (C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\cita\target\classes started by chigu in C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\cita)
+2026-05-29T16:04:20.968-04:00  INFO 13460 --- [citas] [main] medilink.cita.CitaApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-29T16:04:21.504-04:00  INFO 13460 --- [citas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-29T16:04:21.545-04:00  INFO 13460 --- [citas] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 1 JPA repository interface.
+2026-05-29T16:04:21.635-04:00  INFO 13460 --- [citas] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8a0d64ae-0c56-3358-abda-44218cd49817
+2026-05-29T16:04:21.871-04:00  INFO 13460 --- [citas] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 3006 (http)
+2026-05-29T16:04:21.880-04:00  INFO 13460 --- [citas] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-29T16:04:21.880-04:00  INFO 13460 --- [citas] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-29T16:04:21.930-04:00  INFO 13460 --- [citas] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 922 ms
+2026-05-29T16:04:22.209-04:00  INFO 13460 --- [citas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-29T16:04:22.313-04:00  INFO 13460 --- [citas] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@733f1395
+2026-05-29T16:04:22.314-04:00  INFO 13460 --- [citas] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-29T16:04:22.360-04:00  INFO 13460 --- [citas] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/citas (MySQL 5.5)
+2026-05-29T16:04:22.384-04:00  INFO 13460 --- [citas] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `citas`.`flyway_schema_history` does not exist yet
+2026-05-29T16:04:22.386-04:00  INFO 13460 --- [citas] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.011s)
+2026-05-29T16:04:22.409-04:00  INFO 13460 --- [citas] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `citas`.`flyway_schema_history` ...
+2026-05-29T16:04:22.458-04:00  INFO 13460 --- [citas] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `citas`: << Empty Schema >>
+2026-05-29T16:04:22.476-04:00  INFO 13460 --- [citas] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `citas` to version "1 - crear tablas"
+2026-05-29T16:04:22.499-04:00  INFO 13460 --- [citas] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `citas` to version "2 - insertar citas"
+2026-05-29T16:04:22.509-04:00  INFO 13460 --- [citas] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `citas`, now at version v2 (execution time 00:00.015s)
+2026-05-29T16:04:22.571-04:00  INFO 13460 --- [citas] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-29T16:04:22.633-04:00  INFO 13460 --- [citas] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-29T16:04:22.962-04:00  INFO 13460 --- [citas] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-29T16:04:23.010-04:00  WARN 13460 --- [citas] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-29T16:04:23.014-04:00  WARN 13460 --- [citas] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29T16:04:23.023-04:00  INFO 13460 --- [citas] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/citas]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: citas/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-29T16:04:23.644-04:00  INFO 13460 --- [citas] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-29T16:04:23.685-04:00  INFO 13460 --- [citas] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T16:04:23.736-04:00  INFO 13460 --- [citas] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-29T16:04:23.877-04:00  WARN 13460 --- [citas] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-29T16:04:25.105-04:00  INFO 13460 --- [citas] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T16:04:25.142-04:00  INFO 13460 --- [citas] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 3006 (http) with context path '/'
+2026-05-29T16:04:26.150-04:00  INFO 13460 --- [citas] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T16:04:26.153-04:00  INFO 13460 --- [citas] [main] medilink.cita.CitaApplication            : Started CitaApplication in 6.562 seconds (process running for 7.05)
+2026-05-29T16:06:01.530-04:00  INFO 13460 --- [citas] [http-nio-3006-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-29T16:06:01.531-04:00  INFO 13460 --- [citas] [http-nio-3006-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-29T16:06:01.531-04:00  INFO 13460 --- [citas] [http-nio-3006-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-05-29T16:06:01.555-04:00  INFO 13460 --- [citas] [http-nio-3006-exec-2] medilink.cita.service.CitaService        : Se está obteniendo una citación con id 1
+2026-05-29T16:08:40.701-04:00  INFO 13460 --- [citas] [http-nio-3006-exec-8] medilink.cita.service.CitaService        : Se está obteniendo una citación con id 1
+2026-05-29T16:10:24.814-04:00  INFO 13460 --- [citas] [http-nio-3006-exec-4] medilink.cita.service.CitaService        : Se está obteniendo una citación con id 9999
+2026-05-29T16:10:24.817-04:00 ERROR 13460 --- [citas] [http-nio-3006-exec-4] m.cita.exception.GlobalExceptionHandler  : No existe una cita con el id: 9999
+2026-05-29T16:11:16.943-04:00  INFO 13460 --- [citas] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-29T16:11:16.954-04:00  INFO 13460 --- [citas] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-29T16:11:16.956-04:00  INFO 13460 --- [citas] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T16:11:16.958-04:00  INFO 13460 --- [citas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-29T16:11:16.961-04:00  INFO 13460 --- [citas] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -1,0 +1,58 @@
+2026-05-29T09:48:37.992-04:00  INFO 15408 --- [evaluacion_atencion] [main] m.e.EvaluacionAtencionApplication        : Starting EvaluacionAtencionApplication using Java 25 with PID 15408 (C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\evaluacion_atencion\target\classes started by chigu in C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\evaluacion_atencion)
+2026-05-29T09:48:37.994-04:00  INFO 15408 --- [evaluacion_atencion] [main] m.e.EvaluacionAtencionApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-05-29T09:48:38.427-04:00  INFO 15408 --- [evaluacion_atencion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-29T09:48:38.463-04:00  INFO 15408 --- [evaluacion_atencion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 1 JPA repository interface.
+2026-05-29T09:48:38.539-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fc8421b1-bf2e-3f50-acec-d6cb59d01629
+2026-05-29T09:48:38.736-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 3009 (http)
+2026-05-29T09:48:38.745-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-29T09:48:38.746-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-29T09:48:38.789-04:00  INFO 15408 --- [evaluacion_atencion] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 764 ms
+2026-05-29T09:48:39.009-04:00  INFO 15408 --- [evaluacion_atencion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-29T09:48:39.097-04:00  INFO 15408 --- [evaluacion_atencion] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7772d266
+2026-05-29T09:48:39.098-04:00  INFO 15408 --- [evaluacion_atencion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-29T09:48:39.141-04:00  INFO 15408 --- [evaluacion_atencion] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/evaluacion_atencion (MySQL 5.5)
+2026-05-29T09:48:39.165-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `evaluacion_atencion`.`flyway_schema_history` does not exist yet
+2026-05-29T09:48:39.167-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.011s)
+2026-05-29T09:48:39.193-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `evaluacion_atencion`.`flyway_schema_history` ...
+2026-05-29T09:48:39.234-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `evaluacion_atencion`: << Empty Schema >>
+2026-05-29T09:48:39.242-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `evaluacion_atencion` to version "1 - crear tabla evaluaciones atencion"
+2026-05-29T09:48:39.264-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `evaluacion_atencion` to version "2 - insertar evaluaciones atencion"
+2026-05-29T09:48:39.274-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `evaluacion_atencion`, now at version v2 (execution time 00:00.009s)
+2026-05-29T09:48:39.327-04:00  INFO 15408 --- [evaluacion_atencion] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-29T09:48:39.356-04:00  INFO 15408 --- [evaluacion_atencion] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-29T09:48:39.623-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-29T09:48:39.664-04:00  WARN 15408 --- [evaluacion_atencion] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-29T09:48:39.666-04:00  WARN 15408 --- [evaluacion_atencion] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29T09:48:39.677-04:00  INFO 15408 --- [evaluacion_atencion] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/evaluacion_atencion]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: evaluacion_atencion/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-29T09:48:40.200-04:00  INFO 15408 --- [evaluacion_atencion] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-29T09:48:40.231-04:00  INFO 15408 --- [evaluacion_atencion] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T09:48:40.277-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-29T09:48:40.396-04:00  WARN 15408 --- [evaluacion_atencion] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-29T09:48:41.614-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T09:48:41.643-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 3009 (http) with context path '/'
+2026-05-29T09:48:42.650-04:00  INFO 15408 --- [evaluacion_atencion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T09:48:42.654-04:00  INFO 15408 --- [evaluacion_atencion] [main] m.e.EvaluacionAtencionApplication        : Started EvaluacionAtencionApplication in 5.958 seconds (process running for 6.385)
+2026-05-29T09:50:46.854-04:00  INFO 15408 --- [evaluacion_atencion] [http-nio-3009-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-29T09:50:46.855-04:00  INFO 15408 --- [evaluacion_atencion] [http-nio-3009-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-29T09:50:46.856-04:00  INFO 15408 --- [evaluacion_atencion] [http-nio-3009-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-05-29T09:50:46.887-04:00  INFO 15408 --- [evaluacion_atencion] [http-nio-3009-exec-2] m.e.service.EvaluacionAtencionService    : Obteniendo listado de evaluaciones de atención
+2026-05-29T09:51:04.952-04:00  INFO 15408 --- [evaluacion_atencion] [http-nio-3009-exec-3] m.e.service.EvaluacionAtencionService    : Obteniendo evaluación de atención con id 1
+2026-05-29T09:51:38.186-04:00  INFO 15408 --- [evaluacion_atencion] [http-nio-3009-exec-6] m.e.service.EvaluacionAtencionService    : Creando evaluación de atención: EvaluacionAtencionRequest(idPaciente=111, idProfesional=211, idCita=11, fechaEvaluacion=2026-05-29, calificacion=5, comentario=Excelente atención médica)
+2026-05-29T09:52:16.652-04:00  INFO 15408 --- [evaluacion_atencion] [http-nio-3009-exec-7] m.e.service.EvaluacionAtencionService    : Evaluación de atención con id 1 actualizada
+2026-05-29T09:52:47.858-04:00  INFO 15408 --- [evaluacion_atencion] [http-nio-3009-exec-8] m.e.service.EvaluacionAtencionService    : Evaluación de atención con id 1 eliminada
+2026-05-29T09:53:51.611-04:00  INFO 15408 --- [evaluacion_atencion] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-29T09:53:51.619-04:00  INFO 15408 --- [evaluacion_atencion] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-29T09:53:51.621-04:00  INFO 15408 --- [evaluacion_atencion] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T09:53:51.623-04:00  INFO 15408 --- [evaluacion_atencion] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-29T09:53:51.626-04:00  INFO 15408 --- [evaluacion_atencion] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

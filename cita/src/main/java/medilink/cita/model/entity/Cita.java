@@ -1,58 +1,60 @@
 package medilink.cita.model.entity;
-///VAL ENTRADA Y MANEJO DE ERRORES
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import medilink.cita.model.enums.EstadoCita;
+import medilink.cita.model.enums.ModalidadCita;
 
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
-@Table (name = "cliente")
+@Table (name = "citas")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder ///instancia automaticamente
+@Builder
 public class Cita {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCita; //PK
+    @Column(name = "id_cita")
+    private Long idCita;
 
-    //@ManyToOne
-    @Column(name = "paciente", nullable = false)
-    private Long idPaciente; //FK
+    @Column(name = "id_paciente", nullable = false)
+    private Long idPaciente;
 
-    //@ManyToOne
-    private Long idProfesional; //FK
+    @Column(name = "id_profesional", nullable = false)
+    private Long idProfesional;
 
-    //@ManyToOne
-    private Long idAgenda; //FK
+    @Column(name = "id_agenda", nullable = false)
+    private Long idAgenda;
 
-    @Column(name = "fecha citación", nullable = false)
+    @Column(name = "fecha_citacion", nullable = false)
     private LocalDate fechaCita;
 
-    @Column(name = "hora citación", nullable = false)
+    @Column(name = "hora_citacion", nullable = false)
     private LocalTime horaCita;
 
-    @Column(name = "modalidad atención", length = 50, nullable = false)
-    //@OneToOne
-    private String modalidadAtencionCita;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "modalidad_atencion", length = 50, nullable = false)
+    private ModalidadCita modalidadAtencionCita;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "estado", length = 50, nullable = false)
-    //@OneToOne
-    private String estadoCita;
+    private EstadoCita estadoCita;
 
-    @Column(name = "motivo", length = 50, nullable = false)
+    @Column(name = "motivo", length = 100, nullable = false)
     private String motivoCita;
 
-    @Column(name = "observaciones", length = 100, nullable = true)
+    @Column(name = "observaciones", length = 200)
     private String observacionesCita;
 
-    @Column(name = "fecha creación", nullable = false)
+    @Column(name = "fecha_creacion", nullable = false)
     private LocalDate fechaCreacionCita;
 
 }

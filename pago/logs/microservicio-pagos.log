@@ -1,0 +1,227 @@
+2026-05-29T11:48:21.337-04:00  INFO 34724 --- [pagos] [main] medilink.pago.PagoApplication            : Starting PagoApplication using Java 25 with PID 34724 (C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\pago\target\classes started by chigu in C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\pago)
+2026-05-29T11:48:21.338-04:00  INFO 34724 --- [pagos] [main] medilink.pago.PagoApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-29T11:48:21.821-04:00  INFO 34724 --- [pagos] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-29T11:48:21.834-04:00  INFO 34724 --- [pagos] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2026-05-29T11:48:21.916-04:00  INFO 34724 --- [pagos] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ad504a16-f33d-32cd-ba51-7d2e3daf28f9
+2026-05-29T11:48:22.153-04:00  INFO 34724 --- [pagos] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 3010 (http)
+2026-05-29T11:48:22.163-04:00  INFO 34724 --- [pagos] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-29T11:48:22.163-04:00  INFO 34724 --- [pagos] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-29T11:48:22.208-04:00  INFO 34724 --- [pagos] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 832 ms
+2026-05-29T11:48:22.494-04:00  INFO 34724 --- [pagos] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-29T11:48:22.607-04:00  INFO 34724 --- [pagos] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@736b21ee
+2026-05-29T11:48:22.608-04:00  INFO 34724 --- [pagos] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-29T11:48:22.654-04:00  INFO 34724 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/pagos (MySQL 5.5)
+2026-05-29T11:48:22.678-04:00  INFO 34724 --- [pagos] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `pagos`.`flyway_schema_history` does not exist yet
+2026-05-29T11:48:22.680-04:00  INFO 34724 --- [pagos] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.011s)
+2026-05-29T11:48:22.715-04:00  INFO 34724 --- [pagos] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `pagos`.`flyway_schema_history` ...
+2026-05-29T11:48:22.758-04:00  INFO 34724 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `pagos`: << Empty Schema >>
+2026-05-29T11:48:22.763-04:00  INFO 34724 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `pagos` to version "1 - crear tablas pagos"
+2026-05-29T11:48:22.780-04:00  INFO 34724 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `pagos` to version "2 - insertar pagos"
+2026-05-29T11:48:22.790-04:00  INFO 34724 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `pagos`, now at version v2 (execution time 00:00.008s)
+2026-05-29T11:48:22.855-04:00  INFO 34724 --- [pagos] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-29T11:48:22.906-04:00  INFO 34724 --- [pagos] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-29T11:48:23.254-04:00  INFO 34724 --- [pagos] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-29T11:48:23.295-04:00  WARN 34724 --- [pagos] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-29T11:48:23.298-04:00  WARN 34724 --- [pagos] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29T11:48:23.308-04:00  INFO 34724 --- [pagos] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/pagos]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: pagos/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-29T11:48:23.588-04:00  INFO 34724 --- [pagos] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-29T11:48:23.593-04:00  INFO 34724 --- [pagos] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T11:48:23.626-04:00  WARN 34724 --- [pagos] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-29T11:48:24.857-04:00  INFO 34724 --- [pagos] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T11:48:24.898-04:00  INFO 34724 --- [pagos] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 3010 (http) with context path '/'
+2026-05-29T11:48:25.905-04:00  INFO 34724 --- [pagos] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T11:48:25.909-04:00  INFO 34724 --- [pagos] [main] medilink.pago.PagoApplication            : Started PagoApplication in 5.95 seconds (process running for 6.497)
+2026-05-29T11:50:12.646-04:00  INFO 34724 --- [pagos] [http-nio-3010-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-29T11:50:12.649-04:00  INFO 34724 --- [pagos] [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-29T11:50:12.649-04:00  INFO 34724 --- [pagos] [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-05-29T11:54:21.374-04:00  INFO 34724 --- [pagos] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-29T11:54:21.382-04:00  INFO 34724 --- [pagos] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-29T11:54:21.384-04:00  INFO 34724 --- [pagos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T11:54:21.385-04:00  INFO 34724 --- [pagos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-29T11:54:21.389-04:00  INFO 34724 --- [pagos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-29T11:54:25.133-04:00  INFO 30828 --- [pagos] [main] medilink.pago.PagoApplication            : Starting PagoApplication using Java 25 with PID 30828 (C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\pago\target\classes started by chigu in C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\pago)
+2026-05-29T11:54:25.135-04:00  INFO 30828 --- [pagos] [main] medilink.pago.PagoApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-29T11:54:25.531-04:00  INFO 30828 --- [pagos] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-29T11:54:25.543-04:00  INFO 30828 --- [pagos] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2026-05-29T11:54:25.616-04:00  INFO 30828 --- [pagos] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ff20b5e1-7c51-3bb3-994d-9145145851ea
+2026-05-29T11:54:25.815-04:00  INFO 30828 --- [pagos] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 3010 (http)
+2026-05-29T11:54:25.823-04:00  INFO 30828 --- [pagos] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-29T11:54:25.823-04:00  INFO 30828 --- [pagos] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-29T11:54:25.861-04:00  INFO 30828 --- [pagos] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 697 ms
+2026-05-29T11:54:26.097-04:00  INFO 30828 --- [pagos] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-29T11:54:26.186-04:00  INFO 30828 --- [pagos] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b0902b4
+2026-05-29T11:54:26.187-04:00  INFO 30828 --- [pagos] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-29T11:54:26.229-04:00  INFO 30828 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/pagos (MySQL 5.5)
+2026-05-29T11:54:26.260-04:00  INFO 30828 --- [pagos] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.015s)
+2026-05-29T11:54:26.268-04:00  INFO 30828 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `pagos`: 2
+2026-05-29T11:54:26.270-04:00  INFO 30828 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Schema `pagos` is up to date. No migration necessary.
+2026-05-29T11:54:26.320-04:00  INFO 30828 --- [pagos] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-29T11:54:26.352-04:00  INFO 30828 --- [pagos] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-29T11:54:26.618-04:00  INFO 30828 --- [pagos] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-29T11:54:26.647-04:00  WARN 30828 --- [pagos] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-29T11:54:26.649-04:00  WARN 30828 --- [pagos] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29T11:54:26.657-04:00  INFO 30828 --- [pagos] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/pagos]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: pagos/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-29T11:54:26.852-04:00  INFO 30828 --- [pagos] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-29T11:54:26.858-04:00  INFO 30828 --- [pagos] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T11:54:26.873-04:00  WARN 30828 --- [pagos] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'pagoController' defined in file [C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\pago\target\classes\medilink\pago\controller\PagoController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'medilink.pago.service.PagoService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-05-29T11:54:26.873-04:00  INFO 30828 --- [pagos] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T11:54:26.875-04:00  INFO 30828 --- [pagos] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-29T11:54:26.879-04:00  INFO 30828 --- [pagos] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-29T11:54:26.881-04:00  INFO 30828 --- [pagos] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-29T11:54:26.886-04:00  INFO 30828 --- [pagos] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-29T11:54:26.896-04:00 ERROR 30828 --- [pagos] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in medilink.pago.controller.PagoController required a bean of type 'medilink.pago.service.PagoService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'medilink.pago.service.PagoService' in your configuration.
+
+2026-05-29T11:58:13.013-04:00  INFO 5424 --- [pagos] [main] medilink.pago.PagoApplication            : Starting PagoApplication using Java 25 with PID 5424 (C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\pago\target\classes started by chigu in C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\pago)
+2026-05-29T11:58:13.016-04:00  INFO 5424 --- [pagos] [main] medilink.pago.PagoApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-29T11:58:13.473-04:00  INFO 5424 --- [pagos] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-29T11:58:13.512-04:00  INFO 5424 --- [pagos] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 1 JPA repository interface.
+2026-05-29T11:58:13.589-04:00  INFO 5424 --- [pagos] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f49cb0e7-fd49-3980-bc27-ca20b211b341
+2026-05-29T11:58:13.805-04:00  INFO 5424 --- [pagos] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 3010 (http)
+2026-05-29T11:58:13.814-04:00  INFO 5424 --- [pagos] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-29T11:58:13.814-04:00  INFO 5424 --- [pagos] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-29T11:58:13.855-04:00  INFO 5424 --- [pagos] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 804 ms
+2026-05-29T11:58:14.098-04:00  INFO 5424 --- [pagos] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-29T11:58:14.197-04:00  INFO 5424 --- [pagos] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@150d6eaf
+2026-05-29T11:58:14.199-04:00  INFO 5424 --- [pagos] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-29T11:58:14.250-04:00  INFO 5424 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/pagos (MySQL 5.5)
+2026-05-29T11:58:14.289-04:00  INFO 5424 --- [pagos] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.023s)
+2026-05-29T11:58:14.306-04:00  INFO 5424 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `pagos`: 2
+2026-05-29T11:58:14.309-04:00  INFO 5424 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Schema `pagos` is up to date. No migration necessary.
+2026-05-29T11:58:14.366-04:00  INFO 5424 --- [pagos] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-29T11:58:14.398-04:00  INFO 5424 --- [pagos] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-29T11:58:14.664-04:00  INFO 5424 --- [pagos] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-29T11:58:14.698-04:00  WARN 5424 --- [pagos] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-29T11:58:14.700-04:00  WARN 5424 --- [pagos] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29T11:58:14.708-04:00  INFO 5424 --- [pagos] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/pagos]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: pagos/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-29T11:58:15.319-04:00  INFO 5424 --- [pagos] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-29T11:58:15.359-04:00  INFO 5424 --- [pagos] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T11:58:15.409-04:00  INFO 5424 --- [pagos] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-29T11:58:15.549-04:00  WARN 5424 --- [pagos] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-29T11:58:16.750-04:00  INFO 5424 --- [pagos] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T11:58:16.785-04:00  INFO 5424 --- [pagos] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 3010 (http) with context path '/'
+2026-05-29T11:58:17.791-04:00  INFO 5424 --- [pagos] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T11:58:17.795-04:00  INFO 5424 --- [pagos] [main] medilink.pago.PagoApplication            : Started PagoApplication in 6.173 seconds (process running for 6.6)
+2026-05-29T11:58:25.080-04:00  INFO 5424 --- [pagos] [http-nio-3010-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-29T11:58:25.080-04:00  INFO 5424 --- [pagos] [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-29T11:58:25.081-04:00  INFO 5424 --- [pagos] [http-nio-3010-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-05-29T11:58:25.098-04:00  INFO 5424 --- [pagos] [http-nio-3010-exec-1] medilink.pago.service.PagoService        : Obteniendo listado de pagos
+2026-05-29T11:59:01.973-04:00  INFO 5424 --- [pagos] [http-nio-3010-exec-7] medilink.pago.service.PagoService        : Obteniendo pago con id 1
+2026-05-29T11:59:44.913-04:00  INFO 5424 --- [pagos] [http-nio-3010-exec-5] medilink.pago.service.PagoService        : Creando pago PagoRequest(idPaciente=111, idProfesional=211, idCita=11, fechaPago=2026-05-29, monto=25000.0, metodoPago=EFECTIVO, estadoPago=PAGADO)
+2026-05-29T12:00:20.879-04:00  INFO 5424 --- [pagos] [http-nio-3010-exec-8] medilink.pago.service.PagoService        : Pago con id 1 actualizado
+2026-05-29T12:00:57.135-04:00 ERROR 5424 --- [pagos] [http-nio-3010-exec-9] medilink.pago.service.PagoService        : No existe pago con id 111
+2026-05-29T12:00:57.135-04:00 ERROR 5424 --- [pagos] [http-nio-3010-exec-9] m.pago.exception.GlobalExceptionHandler  : No existe un pago con el id: 111
+2026-05-29T12:01:13.457-04:00  INFO 5424 --- [pagos] [http-nio-3010-exec-2] medilink.pago.service.PagoService        : Pago con id 1 eliminado
+2026-05-29T12:01:36.071-04:00  INFO 5424 --- [pagos] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-29T12:01:36.081-04:00  INFO 5424 --- [pagos] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-29T12:01:36.083-04:00  INFO 5424 --- [pagos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T12:01:36.084-04:00  INFO 5424 --- [pagos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-29T12:01:36.088-04:00  INFO 5424 --- [pagos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-29T16:04:53.311-04:00  INFO 18660 --- [pagos] [main] medilink.pago.PagoApplication            : Starting PagoApplication using Java 25 with PID 18660 (C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\pago\target\classes started by chigu in C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\pago)
+2026-05-29T16:04:53.313-04:00  INFO 18660 --- [pagos] [main] medilink.pago.PagoApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-05-29T16:04:53.745-04:00  INFO 18660 --- [pagos] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-29T16:04:53.782-04:00  INFO 18660 --- [pagos] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 1 JPA repository interface.
+2026-05-29T16:04:53.864-04:00  INFO 18660 --- [pagos] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=261aa518-e42d-30b3-ad16-497005bea1ca
+2026-05-29T16:04:54.072-04:00  INFO 18660 --- [pagos] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 3010 (http)
+2026-05-29T16:04:54.084-04:00  INFO 18660 --- [pagos] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-29T16:04:54.084-04:00  INFO 18660 --- [pagos] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-29T16:04:54.128-04:00  INFO 18660 --- [pagos] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 785 ms
+2026-05-29T16:04:54.358-04:00  INFO 18660 --- [pagos] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-29T16:04:54.448-04:00  INFO 18660 --- [pagos] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@566c1e71
+2026-05-29T16:04:54.449-04:00  INFO 18660 --- [pagos] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-29T16:04:54.498-04:00  INFO 18660 --- [pagos] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/pagos (MySQL 5.5)
+2026-05-29T16:04:54.525-04:00  INFO 18660 --- [pagos] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `pagos`.`flyway_schema_history` does not exist yet
+2026-05-29T16:04:54.528-04:00  INFO 18660 --- [pagos] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.014s)
+2026-05-29T16:04:54.555-04:00  INFO 18660 --- [pagos] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `pagos`.`flyway_schema_history` ...
+2026-05-29T16:04:54.598-04:00  INFO 18660 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `pagos`: << Empty Schema >>
+2026-05-29T16:04:54.606-04:00  INFO 18660 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `pagos` to version "1 - crear tablas pagos"
+2026-05-29T16:04:54.632-04:00  INFO 18660 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `pagos` to version "2 - insertar pagos"
+2026-05-29T16:04:54.642-04:00  INFO 18660 --- [pagos] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `pagos`, now at version v2 (execution time 00:00.012s)
+2026-05-29T16:04:54.698-04:00  INFO 18660 --- [pagos] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-29T16:04:54.727-04:00  INFO 18660 --- [pagos] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-05-29T16:04:54.999-04:00  INFO 18660 --- [pagos] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-29T16:04:55.030-04:00  WARN 18660 --- [pagos] [main] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-29T16:04:55.032-04:00  WARN 18660 --- [pagos] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29T16:04:55.040-04:00  INFO 18660 --- [pagos] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/pagos]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: pagos/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-29T16:04:55.540-04:00  INFO 18660 --- [pagos] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-29T16:04:55.575-04:00  INFO 18660 --- [pagos] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T16:04:55.617-04:00  INFO 18660 --- [pagos] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-29T16:04:55.761-04:00  WARN 18660 --- [pagos] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-29T16:04:57.000-04:00  INFO 18660 --- [pagos] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T16:04:57.024-04:00  INFO 18660 --- [pagos] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 3010 (http) with context path '/'
+2026-05-29T16:04:58.031-04:00  INFO 18660 --- [pagos] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T16:04:58.035-04:00  INFO 18660 --- [pagos] [main] medilink.pago.PagoApplication            : Started PagoApplication in 6.017 seconds (process running for 6.417)
+2026-05-29T16:08:40.599-04:00  INFO 18660 --- [pagos] [http-nio-3010-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-29T16:08:40.600-04:00  INFO 18660 --- [pagos] [http-nio-3010-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-29T16:08:40.601-04:00  INFO 18660 --- [pagos] [http-nio-3010-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-05-29T16:08:40.692-04:00  INFO 18660 --- [pagos] [http-nio-3010-exec-5] medilink.pago.service.PagoService        : Iniciando creación de pago para cita 1
+2026-05-29T16:08:40.692-04:00  INFO 18660 --- [pagos] [http-nio-3010-exec-5] medilink.pago.service.PagoService        : Consultando microservicio Cita para validar id 1
+2026-05-29T16:08:40.714-04:00  INFO 18660 --- [pagos] [http-nio-3010-exec-5] medilink.pago.service.PagoService        : Cita 1 validada correctamente desde microservicio Cita
+2026-05-29T16:08:40.714-04:00  INFO 18660 --- [pagos] [http-nio-3010-exec-5] medilink.pago.service.PagoService        : Pago validado correctamente. Guardando pago para cita 1
+2026-05-29T16:10:24.811-04:00  INFO 18660 --- [pagos] [http-nio-3010-exec-2] medilink.pago.service.PagoService        : Iniciando creación de pago para cita 9999
+2026-05-29T16:10:24.811-04:00  INFO 18660 --- [pagos] [http-nio-3010-exec-2] medilink.pago.service.PagoService        : Consultando microservicio Cita para validar id 9999
+2026-05-29T16:10:24.824-04:00 ERROR 18660 --- [pagos] [http-nio-3010-exec-2] medilink.pago.service.PagoService        : El microservicio Cita respondió 404 para id 9999
+2026-05-29T16:10:24.825-04:00 ERROR 18660 --- [pagos] [http-nio-3010-exec-2] m.pago.exception.GlobalExceptionHandler  : No existe una cita con el id: 9999
+2026-05-29T16:11:23.535-04:00  INFO 18660 --- [pagos] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-29T16:11:23.543-04:00  INFO 18660 --- [pagos] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-05-29T16:11:23.546-04:00  INFO 18660 --- [pagos] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T16:11:23.548-04:00  INFO 18660 --- [pagos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-29T16:11:23.551-04:00  INFO 18660 --- [pagos] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

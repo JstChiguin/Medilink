@@ -1,8 +1,9 @@
 package medilink.cita.controller;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import medilink.cita.dto.request.CitaRequest;
-import medilink.cita.model.entity.Cita;
+import medilink.cita.dto.response.CitaResponse;
 import medilink.cita.service.CitaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,19 +19,18 @@ public class CitaController {
     private final CitaService citaService;
 
     @GetMapping
-    public ResponseEntity<List<Cita>> findAll(){
+    public ResponseEntity<List<CitaResponse>> findAll(){
         return ResponseEntity.ok(citaService.obtenerTodasLasCitas());
     }
 
     @GetMapping("/{idCita}")
-    public ResponseEntity<Cita> findById(@PathVariable Long idCita){
+    public ResponseEntity<CitaResponse> findById(@PathVariable Long idCita){
         return ResponseEntity.ok(citaService.obtenerCitaPorId(idCita));
     }
 
     @PostMapping
-    public ResponseEntity<Cita> create(@RequestBody CitaRequest citaRequest){
-        Cita citaCreada = citaService.crearCita(citaRequest);
-        return ResponseEntity.status(HttpStatus.CREATED).body(citaCreada);
+    public ResponseEntity<CitaResponse> create(@Valid @RequestBody CitaRequest citaRequest){
+        return ResponseEntity.status(HttpStatus.CREATED).body(citaService.crearCita(citaRequest));
     }
 
     @DeleteMapping("/{idCita}")
@@ -40,7 +40,7 @@ public class CitaController {
     }
 
     @PutMapping("/{idCita}")
-    public ResponseEntity<Cita> putById(@PathVariable Long idCita,@RequestBody CitaRequest citaRequest) {
-        return ResponseEntity.ok().body(citaService.actualizarCita(idCita, citaRequest));
+    public ResponseEntity<CitaResponse> putById(@PathVariable Long idCita, @Valid @RequestBody CitaRequest citaRequest) {
+        return ResponseEntity.ok(citaService.actualizarCita(idCita, citaRequest));
     }
 }
