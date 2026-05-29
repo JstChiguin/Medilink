@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 public class PerfilPacienteResponse {
 
     private Long idPerfil;
-    private Long idPaciente;
-    private Long idContacto;
+    private PacienteResponse paciente;
+    private ContactoPacienteResponse contacto;
     private String antecedentesMedicos;
     private String alergias;
     private String medicamentosActuales;

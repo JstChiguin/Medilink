@@ -1,6 +1,5 @@
 package com.medilink.gestion_pacientes.service;
 
-
 import com.medilink.gestion_pacientes.dto.request.PerfilPacienteRequest;
 import com.medilink.gestion_pacientes.dto.response.PerfilPacienteResponse;
 import com.medilink.gestion_pacientes.exception.ContactoNoEncontradoException;
@@ -17,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -27,16 +27,23 @@ public class PerfilPacienteService {
     private final ContactoPacienteRepository contactoPacienteRepository;
     private final PerfilPacienteMapper perfilPacienteMapper;
 
-    public PerfilPacienteResponse crearPerfil(PerfilPacienteRequest perfilPacienteRequest) {
+    public List<PerfilPacienteResponse> listarPerfiles() {
+        return perfilPacienteRepository.findAll()
+                .stream()
+                .map(perfilPacienteMapper::toResponse)
+                .toList();
+    }
+
+    public PerfilPacienteResponse crearPerfil(Long idPaciente, PerfilPacienteRequest req) {
         Paciente paciente = pacienteRepository
-                .findById(perfilPacienteRequest.getIdPaciente())
-                .orElseThrow(() -> new PacienteNoEncontradoException(perfilPacienteRequest.getIdPaciente()));
+                .findById(idPaciente)
+                .orElseThrow(() -> new PacienteNoEncontradoException(idPaciente));
 
         ContactoPaciente contacto = contactoPacienteRepository
-                .findById(perfilPacienteRequest.getIdContacto())
-                .orElseThrow(() -> new ContactoNoEncontradoException(perfilPacienteRequest.getIdPaciente()));
+                .findByPaciente_IdPaciente(idPaciente)
+                .orElseThrow(() -> new ContactoNoEncontradoException(idPaciente));
 
-        PerfilPaciente perfil = perfilPacienteMapper.toEntity(perfilPacienteRequest);
+        PerfilPaciente perfil = perfilPacienteMapper.toEntity(req);
         perfil.setPaciente(paciente);
         perfil.setContactoPaciente(contacto);
         perfil.setUltimaActualizacion(LocalDateTime.now());
@@ -44,20 +51,15 @@ public class PerfilPacienteService {
         return perfilPacienteMapper.toResponse(perfilPacienteRepository.save(perfil));
     }
 
-    public PerfilPacienteResponse actualizarPerfil(Long idPaciente, PerfilPacienteRequest perfilPacienteRequest) {
+    public PerfilPacienteResponse actualizarPerfil(Long idPaciente, PerfilPacienteRequest req) {
         PerfilPaciente perfilExistente = perfilPacienteRepository
                 .findByPaciente_IdPaciente(idPaciente)
                 .orElseThrow(() -> new PerfilNoEncontradoException(idPaciente));
 
-        ContactoPaciente contacto = contactoPacienteRepository
-                .findById(perfilPacienteRequest.getIdContacto())
-                .orElseThrow(() -> new ContactoNoEncontradoException(idPaciente));
-
-        perfilExistente.setAntecedentesMedicos(perfilPacienteRequest.getAntecedentesMedicos());
-        perfilExistente.setAlergias(perfilPacienteRequest.getAlergias());
-        perfilExistente.setMedicamentosActuales(perfilPacienteRequest.getMedicamentosActuales());
-        perfilExistente.setInformacionRelevante(perfilPacienteRequest.getInformacionRelevante());
-        perfilExistente.setContactoPaciente(contacto);
+        perfilExistente.setAntecedentesMedicos(req.getAntecedentesMedicos());
+        perfilExistente.setAlergias(req.getAlergias());
+        perfilExistente.setMedicamentosActuales(req.getMedicamentosActuales());
+        perfilExistente.setInformacionRelevante(req.getInformacionRelevante());
         perfilExistente.setUltimaActualizacion(LocalDateTime.now());
 
         return perfilPacienteMapper.toResponse(perfilPacienteRepository.save(perfilExistente));

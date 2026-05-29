@@ -9,13 +9,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/contactos")
 @RequiredArgsConstructor
 public class ContactoPacienteController {
 
     private final ContactoPacienteService contactoPacienteService;
-
+    @GetMapping
+    public ResponseEntity<List<ContactoPacienteResponse>> listarContactos() {
+        return ResponseEntity.ok(contactoPacienteService.listarContactos());
+    }
     @PostMapping
     public ResponseEntity<ContactoPacienteResponse> crearContacto(
             @Valid @RequestBody ContactoPacienteRequest contactoPacienteRequest) {

@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/perfiles")
 @RequiredArgsConstructor
@@ -17,12 +19,17 @@ public class PerfilPacienteController {
 
     private final PerfilPacienteService perfilPacienteService;
 
-    @PostMapping
+    @GetMapping
+    public ResponseEntity<List<PerfilPacienteResponse>> listarPerfiles() {
+        return ResponseEntity.ok(perfilPacienteService.listarPerfiles());
+    }
+    @PostMapping("/{idPaciente}")
     public ResponseEntity<PerfilPacienteResponse> crearPerfil(
+            @PathVariable Long idPaciente,
             @Valid @RequestBody PerfilPacienteRequest perfilPacienteRequest) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .body(perfilPacienteService.crearPerfil(perfilPacienteRequest));
+                .body(perfilPacienteService.crearPerfil(idPaciente, perfilPacienteRequest));
     }
 
     @PutMapping("/paciente/{idPaciente}")

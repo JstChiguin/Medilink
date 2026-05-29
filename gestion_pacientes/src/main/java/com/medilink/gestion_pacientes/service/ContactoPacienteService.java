@@ -13,6 +13,8 @@ import com.medilink.gestion_pacientes.repository.PacienteRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ContactoPacienteService {
@@ -20,6 +22,13 @@ public class ContactoPacienteService {
     private final ContactoPacienteRepository contactoPacienteRepository;
     private final PacienteRepository pacienteRepository;
     private final ContactoPacienteMapper contactoPacienteMapper;
+
+    public List<ContactoPacienteResponse> listarContactos() {
+        return contactoPacienteRepository.findAll()
+                .stream()
+                .map(contactoPacienteMapper::toResponse)
+                .toList();
+    }
 
     public ContactoPacienteResponse crearContacto(ContactoPacienteRequest contactoPacienteRequest) {
         Paciente paciente = pacienteRepository

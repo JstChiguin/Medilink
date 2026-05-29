@@ -15,7 +15,9 @@ public interface PacienteMapper {
     @Mapping(source = "idUsuario", target = "idUsuario")
     Paciente toEntity(PacienteRequest pacienteRequest);
 
+    @Mapping(target = "usuario", ignore = true)
     PacienteResponse toResponse(Paciente paciente);
 
+    @Mapping(target = "usuario", ignore = true)
     List<PacienteResponse> toResponseList(List<Paciente> pacienteList);
 }

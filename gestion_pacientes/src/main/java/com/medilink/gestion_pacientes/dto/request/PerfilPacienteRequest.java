@@ -12,12 +12,6 @@ import java.time.LocalDateTime;
 @Builder
 public class PerfilPacienteRequest {
 
-    @NotNull(message = "El id del paciente es obligatorio")
-    private Long idPaciente;
-
-    @NotNull(message = "El id del contacto es obligatorio")
-    private Long idContacto;
-
     private String antecedentesMedicos;
 
     private String alergias;
@@ -26,6 +20,4 @@ public class PerfilPacienteRequest {
 
     private String informacionRelevante;
 
-    @NotNull(message = "La fecha de última actualización es obligatoria")
-    private LocalDateTime ultimaActualizacion;
 }
