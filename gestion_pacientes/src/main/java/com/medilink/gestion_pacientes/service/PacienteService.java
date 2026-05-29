@@ -30,12 +30,6 @@ public class PacienteService {
         return pacienteMapper.toResponseList(pacienteRepository.findAll());
     }
 
-    public PacienteResponse obtenerPacientePorId(Long idPaciente) {
-        return pacienteMapper.toResponse(
-                pacienteRepository.findById(idPaciente)
-                        .orElseThrow(() -> new PacienteNoEncontradoException(idPaciente))
-        );
-    }
     public PacienteResponse buscarPorId(Long idPaciente) {
         //log.info("Lógica de negocio: Buscando paciente por ID: {}", idUsuario);
         Paciente paciente = pacienteRepository.findById(idPaciente)
@@ -68,13 +62,27 @@ public class PacienteService {
     }
 
     public PacienteResponse crearPaciente(PacienteRequest pacienteRequest) {
+        UsuarioResponse usuario =
+                clienteUsuario.obtenerUsuarioPorId(pacienteRequest.getIdUsuario());
+
+        if (usuario == null) {
+            throw new UsuarioNoEcontradoException(
+                    "No existe el usuario con ID " + pacienteRequest.getIdUsuario());
+        }
 
         if (pacienteRepository.existsByNumeroDocumento(pacienteRequest.getNumeroDocumento())) {
             throw new DocumentoDuplicadoException(pacienteRequest.getNumeroDocumento());
         }
 
         Paciente paciente = pacienteMapper.toEntity(pacienteRequest);
-        return pacienteMapper.toResponse(pacienteRepository.save(paciente));
+        PacienteResponse response = pacienteMapper.toResponse(pacienteRepository.save(paciente));
+
+        response.setUsuario(UsuarioLimitado.builder()
+                .correoUsuario(usuario.getCorreoUsuario())
+                .build());
+
+        return response;
+
     }
 
     public PacienteResponse actualizarPaciente(Long idPaciente, PacienteRequest pacienteRequest) {
@@ -88,8 +96,16 @@ public class PacienteService {
         pacienteExistente.setEstadoActivo(pacienteRequest.getEstadoActivo());
         pacienteExistente.setFechaRegistro(pacienteRequest.getFechaRegistro());
 
-        return pacienteMapper.toResponse(pacienteRepository.save(pacienteExistente));
-    }
+        PacienteResponse response = pacienteMapper.toResponse(pacienteRepository.save(pacienteExistente));
+
+        UsuarioResponse usuarioResponse = clienteUsuario.obtenerUsuarioPorId(pacienteExistente.getIdUsuario());
+        if (usuarioResponse != null) {
+            response.setUsuario(UsuarioLimitado.builder()
+                    .correoUsuario(usuarioResponse.getCorreoUsuario())
+                    .build());
+        }
+
+        return response;    }
 
     public void desactivarPaciente(Long idPaciente) {
         Paciente paciente = pacienteRepository.findById(idPaciente)

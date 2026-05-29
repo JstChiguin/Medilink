@@ -34,4 +34,7 @@ public class PacienteRequest {
 
     @NotNull(message = "La fecha de registro es obligatoria")
     private LocalDateTime fechaRegistro;
+
+    @NotNull(message = "El usuario es obligatorio")
+    private Long idUsuario;
 }
