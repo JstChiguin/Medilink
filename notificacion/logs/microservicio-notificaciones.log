@@ -1,0 +1,100 @@
+2026-05-29T14:44:02.859-04:00  INFO 16100 --- [notificacion] [main] m.notificacion.NotificacionApplication   : Starting NotificacionApplication using Java 25 with PID 16100 (C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\notificacion\target\classes started by chigu in C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\notificacion)
+2026-05-29T14:44:02.860-04:00  INFO 16100 --- [notificacion] [main] m.notificacion.NotificacionApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-29T14:44:03.217-04:00  INFO 16100 --- [notificacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-29T14:44:03.249-04:00  INFO 16100 --- [notificacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 1 JPA repository interface.
+2026-05-29T14:44:03.307-04:00  INFO 16100 --- [notificacion] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=036db009-5852-3d68-8e1c-df8706b4649a
+2026-05-29T14:44:03.499-04:00  INFO 16100 --- [notificacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3005 (http)
+2026-05-29T14:44:03.507-04:00  INFO 16100 --- [notificacion] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-29T14:44:03.508-04:00  INFO 16100 --- [notificacion] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2026-05-29T14:44:03.543-04:00  INFO 16100 --- [notificacion] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-29T14:44:03.543-04:00  INFO 16100 --- [notificacion] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 658 ms
+2026-05-29T14:44:03.673-04:00  INFO 16100 --- [notificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-29T14:44:03.769-04:00  INFO 16100 --- [notificacion] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3dfd6220
+2026-05-29T14:44:03.770-04:00  INFO 16100 --- [notificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-29T14:44:03.822-04:00  INFO 16100 --- [notificacion] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/notificaciones (MySQL 5.5)
+2026-05-29T14:44:03.842-04:00  INFO 16100 --- [notificacion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `notificaciones`.`flyway_schema_history` does not exist yet
+2026-05-29T14:44:03.843-04:00  INFO 16100 --- [notificacion] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.010s)
+2026-05-29T14:44:03.867-04:00  INFO 16100 --- [notificacion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `notificaciones`.`flyway_schema_history` ...
+2026-05-29T14:44:03.901-04:00  INFO 16100 --- [notificacion] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `notificaciones`: << Empty Schema >>
+2026-05-29T14:44:03.907-04:00  INFO 16100 --- [notificacion] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `notificaciones` to version "1 - crear tablas notificaciones"
+2026-05-29T14:44:03.922-04:00  INFO 16100 --- [notificacion] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `notificaciones` to version "2 - insertar notificaciones"
+2026-05-29T14:44:03.933-04:00  INFO 16100 --- [notificacion] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `notificaciones`, now at version v2 (execution time 00:00.007s)
+2026-05-29T14:44:03.976-04:00  INFO 16100 --- [notificacion] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-29T14:44:04.010-04:00  INFO 16100 --- [notificacion] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2026-05-29T14:44:04.034-04:00  INFO 16100 --- [notificacion] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-29T14:44:04.187-04:00  INFO 16100 --- [notificacion] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-29T14:44:04.217-04:00  WARN 16100 --- [notificacion] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-29T14:44:04.219-04:00  WARN 16100 --- [notificacion] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29T14:44:04.226-04:00  INFO 16100 --- [notificacion] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-29T14:44:04.659-04:00  INFO 16100 --- [notificacion] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-29T14:44:04.685-04:00  INFO 16100 --- [notificacion] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T14:44:04.808-04:00  WARN 16100 --- [notificacion] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-29T14:44:05.995-04:00  INFO 16100 --- [notificacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T14:44:06.033-04:00  INFO 16100 --- [notificacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3005 (http) with context path '/'
+2026-05-29T14:44:07.042-04:00  INFO 16100 --- [notificacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T14:44:07.049-04:00  INFO 16100 --- [notificacion] [main] m.notificacion.NotificacionApplication   : Started NotificacionApplication in 5.557 seconds (process running for 5.921)
+2026-05-29T14:45:19.622-04:00  INFO 16100 --- [notificacion] [http-nio-3005-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-29T14:45:19.622-04:00  INFO 16100 --- [notificacion] [http-nio-3005-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-29T14:45:19.623-04:00  INFO 16100 --- [notificacion] [http-nio-3005-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-05-29T14:49:32.542-04:00  INFO 16100 --- [notificacion] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-29T14:49:32.550-04:00  INFO 16100 --- [notificacion] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-05-29T14:49:32.552-04:00  INFO 16100 --- [notificacion] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T14:49:32.553-04:00  INFO 16100 --- [notificacion] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-29T14:49:32.556-04:00  INFO 16100 --- [notificacion] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-29T14:54:27.581-04:00  INFO 31172 --- [notificacion] [main] m.notificacion.NotificacionApplication   : Starting NotificacionApplication using Java 25 with PID 31172 (C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\notificacion\target\classes started by chigu in C:\Users\chigu\OneDrive\Desktop\Nueva carpeta\Medilink\notificacion)
+2026-05-29T14:54:27.582-04:00  INFO 31172 --- [notificacion] [main] m.notificacion.NotificacionApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-29T14:54:27.913-04:00  INFO 31172 --- [notificacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-29T14:54:27.945-04:00  INFO 31172 --- [notificacion] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 1 JPA repository interface.
+2026-05-29T14:54:28.008-04:00  INFO 31172 --- [notificacion] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=036db009-5852-3d68-8e1c-df8706b4649a
+2026-05-29T14:54:28.199-04:00  INFO 31172 --- [notificacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3005 (http)
+2026-05-29T14:54:28.207-04:00  INFO 31172 --- [notificacion] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-29T14:54:28.207-04:00  INFO 31172 --- [notificacion] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2026-05-29T14:54:28.246-04:00  INFO 31172 --- [notificacion] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-29T14:54:28.246-04:00  INFO 31172 --- [notificacion] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 642 ms
+2026-05-29T14:54:28.378-04:00  INFO 31172 --- [notificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-29T14:54:28.473-04:00  INFO 31172 --- [notificacion] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@61394494
+2026-05-29T14:54:28.475-04:00  INFO 31172 --- [notificacion] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-29T14:54:28.522-04:00  INFO 31172 --- [notificacion] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/notificaciones (MySQL 5.5)
+2026-05-29T14:54:28.543-04:00  INFO 31172 --- [notificacion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `notificaciones`.`flyway_schema_history` does not exist yet
+2026-05-29T14:54:28.544-04:00  INFO 31172 --- [notificacion] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.011s)
+2026-05-29T14:54:28.570-04:00  INFO 31172 --- [notificacion] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `notificaciones`.`flyway_schema_history` ...
+2026-05-29T14:54:28.607-04:00  INFO 31172 --- [notificacion] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `notificaciones`: << Empty Schema >>
+2026-05-29T14:54:28.613-04:00  INFO 31172 --- [notificacion] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `notificaciones` to version "1 - crear tablas notificaciones"
+2026-05-29T14:54:28.632-04:00  INFO 31172 --- [notificacion] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `notificaciones` to version "2 - insertar notificaciones"
+2026-05-29T14:54:28.641-04:00  INFO 31172 --- [notificacion] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema `notificaciones`, now at version v2 (execution time 00:00.009s)
+2026-05-29T14:54:28.684-04:00  INFO 31172 --- [notificacion] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-29T14:54:28.718-04:00  INFO 31172 --- [notificacion] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2026-05-29T14:54:28.738-04:00  INFO 31172 --- [notificacion] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-29T14:54:28.889-04:00  INFO 31172 --- [notificacion] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-29T14:54:28.921-04:00  WARN 31172 --- [notificacion] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-05-29T14:54:28.924-04:00  WARN 31172 --- [notificacion] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29T14:54:28.931-04:00  INFO 31172 --- [notificacion] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-29T14:54:29.389-04:00  INFO 31172 --- [notificacion] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-29T14:54:29.422-04:00  INFO 31172 --- [notificacion] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T14:54:29.566-04:00  WARN 31172 --- [notificacion] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-29T14:54:30.752-04:00  INFO 31172 --- [notificacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T14:54:30.790-04:00  INFO 31172 --- [notificacion] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3005 (http) with context path '/'
+2026-05-29T14:54:31.797-04:00  INFO 31172 --- [notificacion] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2026-05-29T14:54:31.802-04:00  INFO 31172 --- [notificacion] [main] m.notificacion.NotificacionApplication   : Started NotificacionApplication in 5.5 seconds (process running for 5.799)
+2026-05-29T14:55:17.152-04:00  INFO 31172 --- [notificacion] [http-nio-3005-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-29T14:55:17.157-04:00  INFO 31172 --- [notificacion] [http-nio-3005-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-29T14:55:17.157-04:00  INFO 31172 --- [notificacion] [http-nio-3005-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-05-29T15:05:28.283-04:00  INFO 31172 --- [notificacion] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-29T15:05:28.292-04:00  INFO 31172 --- [notificacion] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-05-29T15:05:28.294-04:00  INFO 31172 --- [notificacion] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T15:05:28.296-04:00  INFO 31172 --- [notificacion] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-29T15:05:28.299-04:00  INFO 31172 --- [notificacion] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
