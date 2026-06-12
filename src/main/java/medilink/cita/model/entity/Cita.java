@@ -57,7 +57,4 @@ public class Cita {
     @Column(name = "fecha_creacion", nullable = false)
     private LocalDate fechaCreacionCita;
 
-    @Column(name = "diagnostico_preliminar", length = 200)
-    private String diagnosticoPreliminar;
-
 }

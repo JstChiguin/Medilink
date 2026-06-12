@@ -62,7 +62,6 @@ public class CitaService {
 
             citaActualizada.setEstadoCita(citaRequest.getEstadoCita());
             citaActualizada.setObservacionesCita(citaRequest.getObservacionesCita());
-            citaActualizada.setDiagnosticoPreliminar(citaRequest.getDiagnosticoPreliminar());
             log.info("Cita con id {} actualizada correctamente", idCitaAActualizar);
             return citaMapper.toResponse(citaRepository.save(citaActualizada));
     }

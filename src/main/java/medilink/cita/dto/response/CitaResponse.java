@@ -20,6 +20,5 @@ public class CitaResponse {
     private String motivoCita;
     private String observacionesCita;
     private LocalDate fechaCreacionCita;
-    private String diagnosticoPreliminar;
 
 }

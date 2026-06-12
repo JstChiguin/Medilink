@@ -47,7 +47,4 @@ public class CitaRequest {
     @PastOrPresent (message = "la fecha de creación de la cita no puede ser futura")
     private LocalDate fechaCreacionCita;
 
-    @Size (max = 300, message = "el diagnostico preliminar de la cita no puede superar los 300 caracteres")
-    private  String diagnosticoPreliminar;
-
 }
