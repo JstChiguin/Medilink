@@ -53,17 +53,17 @@ public class CitaService {
     }
 
     public CitaResponse actualizarCita(Long idCitaAActualizar, CitaRequest citaRequest){
-            Cita citaActualizada = citaRepository
-                    .findById(idCitaAActualizar)
-                    .orElseThrow(() -> {
-                        log.error("No se encontró la cita con id {}", idCitaAActualizar);
-                        return new CitaNoEncontrada(idCitaAActualizar);
-                    });
+        Cita citaActualizada = citaRepository
+                .findById(idCitaAActualizar)
+                .orElseThrow(() -> {
+                    log.error("No se encontró la cita con id {}", idCitaAActualizar);
+                    return new CitaNoEncontrada(idCitaAActualizar);
+                });
 
-            citaActualizada.setEstadoCita(citaRequest.getEstadoCita());
-            citaActualizada.setObservacionesCita(citaRequest.getObservacionesCita());
-            log.info("Cita con id {} actualizada correctamente", idCitaAActualizar);
-            return citaMapper.toResponse(citaRepository.save(citaActualizada));
+        citaActualizada.setEstadoCita(citaRequest.getEstadoCita());
+        citaActualizada.setObservacionesCita(citaRequest.getObservacionesCita());
+        log.info("Cita con id {} actualizada correctamente", idCitaAActualizar);
+        return citaMapper.toResponse(citaRepository.save(citaActualizada));
     }
 
     private void validarReglasDeNegocio(CitaRequest citaRequest){
@@ -73,7 +73,7 @@ public class CitaService {
         }
 
         if (citaRequest.getHoraCita().isBefore(LocalTime.of(8,0))
-        || citaRequest.getHoraCita().isAfter(LocalTime.of(17,0))){
+                || citaRequest.getHoraCita().isAfter(LocalTime.of(17,0))){
             log.error("Hora fuera de horario laboral: {}", citaRequest.getHoraCita());
             throw new IllegalArgumentException("La cita debe estar dentro del horario de atención (08:00 a 17:00)");
         }
