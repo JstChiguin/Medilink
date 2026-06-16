@@ -34,3 +34,5 @@ build/
 logs/
 *.log
 *.gz
+*.log
+receta_medica/logs/microservicio-receta-medica.log
