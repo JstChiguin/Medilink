@@ -1,7 +1,9 @@
 package medilink.cita.service;
 
 import lombok.AllArgsConstructor;
+import medilink.cita.client.AgendaClient;
 import medilink.cita.dto.request.CitaRequest;
+import medilink.cita.dto.response.AgendaResponse;
 import medilink.cita.dto.response.CitaResponse;
 import medilink.cita.exception.CitaNoEncontrada;
 import medilink.cita.mapper.CitaMapper;
@@ -10,7 +12,6 @@ import medilink.cita.repository.CitaRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
@@ -22,6 +23,8 @@ public class CitaService {
 
     private final CitaRepository citaRepository;
     private final CitaMapper citaMapper;
+    private final AgendaClient agendaClient;
+
     private static final Logger log = LoggerFactory.getLogger(CitaService.class);
 
     public List<CitaResponse> obtenerTodasLasCitas() {
@@ -29,30 +32,42 @@ public class CitaService {
         return citaMapper.toResponseList(citaRepository.findAll());
     }
 
-    public CitaResponse obtenerCitaPorId (Long idCitaBuscada) {
+    public CitaResponse obtenerCitaPorId(Long idCitaBuscada) {
         log.info("Se está obteniendo una citación con id {}", idCitaBuscada);
+
         return citaMapper.toResponse(citaRepository
                 .findById(idCitaBuscada)
-                .orElseThrow(()-> new CitaNoEncontrada(idCitaBuscada)));
+                .orElseThrow(() -> new CitaNoEncontrada(idCitaBuscada)));
     }
 
-    public CitaResponse crearCita (CitaRequest citaRequest){
-        validarReglasDeNegocio (citaRequest);
+    public CitaResponse crearCita(CitaRequest citaRequest) {
+        validarAgendaExiste(citaRequest.getIdAgenda());
+        validarReglasDeNegocio(citaRequest);
+
         log.info("Creando nueva cita: {}", citaRequest);
-        return citaMapper.toResponse(citaRepository.save(citaMapper.toEntity(citaRequest)));
+
+        return citaMapper.toResponse(
+                citaRepository.save(
+                        citaMapper.toEntity(citaRequest)
+                )
+        );
     }
 
-    public boolean eliminarCita (Long idCitaAEliminar){
-        if (!citaRepository.existsById(idCitaAEliminar)){
+    public boolean eliminarCita(Long idCitaAEliminar) {
+        if (!citaRepository.existsById(idCitaAEliminar)) {
             log.error("No se pudo eliminar la cita. El id {} no existe", idCitaAEliminar);
             throw new CitaNoEncontrada(idCitaAEliminar);
         }
-        citaRepository.deleteById (idCitaAEliminar);
+
+        citaRepository.deleteById(idCitaAEliminar);
         log.info("Cita con id {} eliminada correctamente", idCitaAEliminar);
         return true;
     }
 
-    public CitaResponse actualizarCita(Long idCitaAActualizar, CitaRequest citaRequest){
+    public CitaResponse actualizarCita(Long idCitaAActualizar, CitaRequest citaRequest) {
+        validarAgendaExiste(citaRequest.getIdAgenda());
+        validarReglasDeNegocio(citaRequest);
+
         Cita citaActualizada = citaRepository
                 .findById(idCitaAActualizar)
                 .orElseThrow(() -> {
@@ -60,28 +75,46 @@ public class CitaService {
                     return new CitaNoEncontrada(idCitaAActualizar);
                 });
 
+        citaActualizada.setIdAgenda(citaRequest.getIdAgenda());
+        citaActualizada.setFechaCita(citaRequest.getFechaCita());
+        citaActualizada.setHoraCita(citaRequest.getHoraCita());
+        citaActualizada.setModalidadAtencionCita(citaRequest.getModalidadAtencionCita());
         citaActualizada.setEstadoCita(citaRequest.getEstadoCita());
+        citaActualizada.setMotivoCita(citaRequest.getMotivoCita());
         citaActualizada.setObservacionesCita(citaRequest.getObservacionesCita());
+
         log.info("Cita con id {} actualizada correctamente", idCitaAActualizar);
-        return citaMapper.toResponse(citaRepository.save(citaActualizada));
+
+        return citaMapper.toResponse(
+                citaRepository.save(citaActualizada)
+        );
     }
 
-    private void validarReglasDeNegocio(CitaRequest citaRequest){
-        if (citaRequest.getFechaCita().getDayOfWeek()== DayOfWeek.SUNDAY){
+    private void validarAgendaExiste(Long idAgenda) {
+        AgendaResponse agenda = agendaClient.obtenerAgendaPorId(idAgenda);
+
+        if (agenda == null || agenda.getIdAgenda() == null) {
+            throw new IllegalArgumentException("La agenda médica asociada no existe");
+        }
+    }
+
+    private void validarReglasDeNegocio(CitaRequest citaRequest) {
+        if (citaRequest.getFechaCita().getDayOfWeek() == DayOfWeek.SUNDAY) {
             log.error("Intento de agendar cita en domingo");
             throw new IllegalArgumentException("No se pueden agendar citas los domingos");
         }
 
-        if (citaRequest.getHoraCita().isBefore(LocalTime.of(8,0))
-                || citaRequest.getHoraCita().isAfter(LocalTime.of(17,0))){
+        if (citaRequest.getHoraCita().isBefore(LocalTime.of(8, 0))
+                || citaRequest.getHoraCita().isAfter(LocalTime.of(17, 0))) {
             log.error("Hora fuera de horario laboral: {}", citaRequest.getHoraCita());
             throw new IllegalArgumentException("La cita debe estar dentro del horario de atención (08:00 a 17:00)");
         }
 
         if (citaRepository.existsByFechaCitaAndHoraCita(
-                citaRequest.getFechaCita(), citaRequest.getHoraCita())){
+                citaRequest.getFechaCita(), citaRequest.getHoraCita())) {
             log.error("Ya existe una cita para la fecha {} y hora {}",
                     citaRequest.getFechaCita(), citaRequest.getHoraCita());
+
             throw new IllegalArgumentException("Ya existe una cita agendada en esa fecha y hora");
         }
     }

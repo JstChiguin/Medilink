@@ -36,3 +36,6 @@ logs/
 *.gz
 *.log
 receta_medica/logs/microservicio-receta-medica.log
+
+target/
+**/target/
