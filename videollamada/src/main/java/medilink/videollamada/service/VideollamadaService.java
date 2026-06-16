@@ -1,7 +1,9 @@
 package medilink.videollamada.service;
 
 import lombok.AllArgsConstructor;
+import medilink.videollamada.client.CitaClient;
 import medilink.videollamada.dto.request.VideollamadaRequest;
+import medilink.videollamada.dto.response.CitaResponse;
 import medilink.videollamada.dto.response.VideollamadaResponse;
 import medilink.videollamada.exception.VideollamadaNoEncontrada;
 import medilink.videollamada.mapper.VideollamadaMapper;
@@ -20,6 +22,7 @@ public class VideollamadaService {
 
     private final VideollamadaRepository videollamadaRepository;
     private final VideollamadaMapper videollamadaMapper;
+    private final CitaClient citaClient;
 
     private static final Logger log =
             LoggerFactory.getLogger(VideollamadaService.class);
@@ -44,6 +47,7 @@ public class VideollamadaService {
     public VideollamadaResponse crearVideollamada(
             VideollamadaRequest videollamadaRequest) {
 
+        validarCitaExiste(videollamadaRequest.getIdCita());
         validarReglasDeNegocio(videollamadaRequest);
 
         log.info("Creando videollamada: {}", videollamadaRequest);
@@ -58,6 +62,7 @@ public class VideollamadaService {
             Long idVideollamada,
             VideollamadaRequest videollamadaRequest) {
 
+        validarCitaExiste(videollamadaRequest.getIdCita());
         validarReglasDeNegocio(videollamadaRequest);
 
         Videollamada videollamada = videollamadaRepository
@@ -65,6 +70,7 @@ public class VideollamadaService {
                 .orElseThrow(() ->
                         new VideollamadaNoEncontrada(idVideollamada));
 
+        videollamada.setIdCita(videollamadaRequest.getIdCita());
         videollamada.setFechaProgramada(videollamadaRequest.getFechaProgramada());
         videollamada.setHoraInicio(videollamadaRequest.getHoraInicio());
         videollamada.setHoraTermino(videollamadaRequest.getHoraTermino());
@@ -89,6 +95,14 @@ public class VideollamadaService {
         log.info("Videollamada con id {} eliminada", idVideollamada);
 
         return true;
+    }
+
+    private void validarCitaExiste(Long idCita) {
+        CitaResponse cita = citaClient.obtenerCitaPorId(idCita);
+
+        if (cita == null || cita.getIdCita() == null) {
+            throw new IllegalArgumentException("La cita asociada no existe");
+        }
     }
 
     private void validarReglasDeNegocio(
