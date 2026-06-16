@@ -1,7 +1,9 @@
 package medilink.evaluacionatencion.service;
 
 import lombok.AllArgsConstructor;
+import medilink.evaluacionatencion.client.CitaClient;
 import medilink.evaluacionatencion.dto.request.EvaluacionAtencionRequest;
+import medilink.evaluacionatencion.dto.response.CitaResponse;
 import medilink.evaluacionatencion.dto.response.EvaluacionAtencionResponse;
 import medilink.evaluacionatencion.exception.EvaluacionAtencionNoEncontrada;
 import medilink.evaluacionatencion.mapper.EvaluacionAtencionMapper;
@@ -20,6 +22,7 @@ public class EvaluacionAtencionService {
 
     private final EvaluacionAtencionRepository evaluacionAtencionRepository;
     private final EvaluacionAtencionMapper evaluacionAtencionMapper;
+    private final CitaClient citaClient;
 
     private static final Logger log =
             LoggerFactory.getLogger(EvaluacionAtencionService.class);
@@ -44,6 +47,7 @@ public class EvaluacionAtencionService {
     public EvaluacionAtencionResponse crearEvaluacion(
             EvaluacionAtencionRequest evaluacionAtencionRequest) {
 
+        validarCitaExiste(evaluacionAtencionRequest.getIdCita());
         validarReglasDeNegocio(evaluacionAtencionRequest);
 
         log.info("Creando evaluación de atención: {}", evaluacionAtencionRequest);
@@ -58,6 +62,7 @@ public class EvaluacionAtencionService {
             Long idEvaluacion,
             EvaluacionAtencionRequest evaluacionAtencionRequest) {
 
+        validarCitaExiste(evaluacionAtencionRequest.getIdCita());
         validarReglasDeNegocio(evaluacionAtencionRequest);
 
         EvaluacionAtencion evaluacion = evaluacionAtencionRepository
@@ -65,6 +70,8 @@ public class EvaluacionAtencionService {
                 .orElseThrow(() ->
                         new EvaluacionAtencionNoEncontrada(idEvaluacion));
 
+        evaluacion.setIdCita(evaluacionAtencionRequest.getIdCita());
+        evaluacion.setIdPaciente(evaluacionAtencionRequest.getIdPaciente());
         evaluacion.setCalificacion(evaluacionAtencionRequest.getCalificacion());
         evaluacion.setComentario(evaluacionAtencionRequest.getComentario());
         evaluacion.setFechaEvaluacion(evaluacionAtencionRequest.getFechaEvaluacion());
@@ -87,6 +94,14 @@ public class EvaluacionAtencionService {
         log.info("Evaluación de atención con id {} eliminada", idEvaluacion);
 
         return true;
+    }
+
+    private void validarCitaExiste(Long idCita) {
+        CitaResponse cita = citaClient.obtenerCitaPorId(idCita);
+
+        if (cita == null || cita.getIdCita() == null) {
+            throw new IllegalArgumentException("La cita asociada no existe");
+        }
     }
 
     private void validarReglasDeNegocio(
