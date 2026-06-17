@@ -39,3 +39,7 @@ receta_medica/logs/microservicio-receta-medica.log
 
 target/
 **/target/
+
+logs/
+*.log
+*.gz
