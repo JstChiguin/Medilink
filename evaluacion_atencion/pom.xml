@@ -70,6 +70,12 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- Eureka -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
 		<!-- OpenFeign: para consumir el microservicio Cita -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

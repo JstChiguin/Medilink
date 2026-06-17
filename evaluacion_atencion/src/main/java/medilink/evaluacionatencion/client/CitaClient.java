@@ -4,9 +4,9 @@ import medilink.evaluacionatencion.dto.response.CitaResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name = "cita-service", url = "http://localhost:3006")
+@FeignClient(name = "cita-service", path = "/api/v1/citas")
 public interface CitaClient {
 
-    @GetMapping("/api/v1/citas/{idCita}")
+    @GetMapping("/{idCita}")
     CitaResponse obtenerCitaPorId(@PathVariable Long idCita);
 }
