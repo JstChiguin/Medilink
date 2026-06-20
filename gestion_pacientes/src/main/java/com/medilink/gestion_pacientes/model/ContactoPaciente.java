@@ -32,7 +32,5 @@ public class ContactoPaciente {
     private String telefonoContactoEmergencia;
 
 }
-//    CREAR_CONTACTO()
-//    ACTUALIZAR_CONTACTO()
-//OBTENER CONTACTO POR PACIENTE(idPaciente)
+
 

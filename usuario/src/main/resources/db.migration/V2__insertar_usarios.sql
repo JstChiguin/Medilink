@@ -1,0 +1,7 @@
+INSERT INTO usuarios (nombre_usuario, correo_usuario, contrasenna_usuario, rol_usuario, estado_usuario, fecha_registro) VALUES
+                                                                                                                            ('Admin Principal',   'admin@medilink.com',           'Adm1nn2025',      'Administrador', 'Activo',   '2025-01-01'),
+                                                                                                                            ('Dr. Carlos Pérez',  'carlos.perez@medilink.com',    'Carlos09pz',      'Medico',        'Activo',   '2025-01-05'),
+                                                                                                                            ('Dra. Ana Torres',   'ana.torres@medilink.com',      'AnaTorres7',      'Medico',        'Activo',   '2025-01-06'),
+                                                                                                                            ('Juan García',       'juan.garcia@medilink.com',     'Juangar85c',      'Paciente',      'Activo',   '2025-02-10'),
+                                                                                                                            ('María López',       'maria.lopez@medilink.com',     'MariaLpz3x',      'Paciente',      'Activo',   '2025-02-15'),
+                                                                                                                            ('Pedro Soto',        'pedro.soto@medilink.com',      'PedroSoto2k',     'Paciente',      'Inactivo', '2025-03-01');

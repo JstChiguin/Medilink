@@ -22,9 +22,11 @@ public class Usuario {
     @Column(name = "contrasenna_usuario",nullable = false, length = 50)
     private String contrasennaUsuario;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "rol_usuario",nullable = false)
     private RolUsuario rolUsuario;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "estado_usuario",nullable = false)
     private EstadoUsuario estadoUsuario;
 
