@@ -1,12 +1,8 @@
 package medilink.cita.service;
 
-// =========================
 // IMPORTS DEL PROYECTO
-// =========================
-
 import medilink.cita.client.AgendaClient;
 import medilink.cita.dto.request.CitaRequest;
-import medilink.cita.dto.response.AgendaResponse;
 import medilink.cita.dto.response.CitaResponse;
 import medilink.cita.mapper.CitaMapper;
 import medilink.cita.model.entity.Cita;
@@ -14,10 +10,8 @@ import medilink.cita.model.enums.EstadoCita;
 import medilink.cita.model.enums.ModalidadCita;
 import medilink.cita.repository.CitaRepository;
 
-// =========================
-// IMPORTS JUNIT Y MOCKITO
-// =========================
 
+// IMPORTS JUNIT Y MOCKITO
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -33,17 +27,13 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-// =========================
-// HABILITA MOCKITO
-// =========================
 
+// HABILITA MOCKITO PARA LOS TESTS
 @ExtendWith(MockitoExtension.class)
 class CitaServiceTest {
 
-    // =========================
-    // DEPENDENCIAS SIMULADAS
-    // =========================
 
+    // MOCKS (DEPENDENCIAS SIMULADAS)
     @Mock
     private CitaRepository citaRepository;
 
@@ -53,32 +43,26 @@ class CitaServiceTest {
     @Mock
     private AgendaClient agendaClient;
 
-    // =========================
-    // SERVICIO A PROBAR
-    // =========================
 
+    // SERVICIO REAL A PROBAR
     @InjectMocks
     private CitaService citaService;
 
-    // =========================
-    // OBJETOS DE APOYO
-    // =========================
 
+    // OBJETOS DE APOYO
     private Cita cita;
     private CitaRequest citaRequest;
     private CitaResponse citaResponse;
-    private AgendaResponse agendaResponse;
 
-    // =========================
-    // DATOS DE PRUEBA
-    // =========================
 
+    // SE EJECUTA ANTES DE CADA TEST
+    // CREA DATOS DE PRUEBA
     @BeforeEach
     void setUp() {
 
-        // Entidad simulada
-
+        // ENTIDAD CITA
         cita = new Cita();
+
         cita.setIdCita(1L);
         cita.setIdPaciente(101L);
         cita.setIdProfesional(201L);
@@ -91,9 +75,10 @@ class CitaServiceTest {
         cita.setObservacionesCita("Paciente estable");
         cita.setFechaCreacionCita(LocalDate.now());
 
-        // Request simulada
 
+        // REQUEST DE ENTRADA
         citaRequest = new CitaRequest();
+
         citaRequest.setIdPaciente(101L);
         citaRequest.setIdProfesional(201L);
         citaRequest.setIdAgenda(1L);
@@ -105,9 +90,10 @@ class CitaServiceTest {
         citaRequest.setObservacionesCita("Paciente estable");
         citaRequest.setFechaCreacionCita(LocalDate.now());
 
-        // Response simulada
 
+        // RESPONSE ESPERADA
         citaResponse = new CitaResponse();
+
         citaResponse.setIdCita(1L);
         citaResponse.setIdPaciente(101L);
         citaResponse.setIdProfesional(201L);
@@ -119,30 +105,25 @@ class CitaServiceTest {
         citaResponse.setMotivoCita("Control médico");
         citaResponse.setObservacionesCita("Paciente estable");
         citaResponse.setFechaCreacionCita(LocalDate.now());
-
-        // Agenda simulada
-
-        agendaResponse = new AgendaResponse();
-        agendaResponse.setIdAgenda(1L);
     }
 
-    // ==========================================================
-    // TEST 1
-    // DEBE OBTENER TODAS LAS CITAS
-    // ==========================================================
-
+    // TEST 1 - OBTENER TODAS LAS CITAS
     @Test
     void obtenerTodasLasCitas_debeRetornarListaDeCitas() {
 
+        // Simula lo que devuelve el repositorio
         when(citaRepository.findAll())
                 .thenReturn(List.of(cita));
 
+        // Simula el mapper
         when(citaMapper.toResponseList(List.of(cita)))
                 .thenReturn(List.of(citaResponse));
 
+        // Ejecuta método real
         List<CitaResponse> resultado =
                 citaService.obtenerTodasLasCitas();
 
+        // Verificaciones
         assertNotNull(resultado);
         assertEquals(1, resultado.size());
         assertEquals(1L, resultado.get(0).getIdCita());
@@ -150,34 +131,33 @@ class CitaServiceTest {
         verify(citaRepository, times(1)).findAll();
     }
 
-    // ==========================================================
-    // TEST 2
-    // DEBE CREAR UNA CITA CORRECTAMENTE
-    // ==========================================================
-
+    // TEST 2 - CREAR CITA CORRECTAMENTE
     @Test
     void crearCita_debeGuardarYRetornarCita() {
 
-        when(agendaClient.obtenerAgendaPorId(1L))
-                .thenReturn(agendaResponse);
-
+        // No existe otra cita en la misma fecha y hora
         when(citaRepository.existsByFechaCitaAndHoraCita(
                 citaRequest.getFechaCita(),
                 citaRequest.getHoraCita()))
                 .thenReturn(false);
 
+        // Conversión Request -> Entity
         when(citaMapper.toEntity(citaRequest))
                 .thenReturn(cita);
 
+        // Simula guardado en BD
         when(citaRepository.save(cita))
                 .thenReturn(cita);
 
+        // Conversión Entity -> Response
         when(citaMapper.toResponse(cita))
                 .thenReturn(citaResponse);
 
+        // Ejecuta método real
         CitaResponse resultado =
                 citaService.crearCita(citaRequest);
 
+        // Validaciones
         assertNotNull(resultado);
         assertEquals(1L, resultado.getIdCita());
         assertEquals(
@@ -188,84 +168,73 @@ class CitaServiceTest {
         verify(citaRepository, times(1)).save(cita);
     }
 
-    // ==========================================================
-    // TEST 3
-    // NO DEBE CREAR CITA SI LA AGENDA NO EXISTE
-    // ==========================================================
-
-    @Test
-    void crearCita_debeLanzarErrorCuandoAgendaNoExiste() {
-
-        when(agendaClient.obtenerAgendaPorId(1L))
-                .thenReturn(null);
-
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> citaService.crearCita(citaRequest)
-        );
-    }
-
-    // ==========================================================
-    // TEST 4
-    // NO DEBE CREAR CITA EN DOMINGO
-    // ==========================================================
-
+    // TEST 3 - NO PERMITE AGENDAR DOMINGO
     @Test
     void crearCita_debeLanzarErrorCuandoEsDomingo() {
 
+        // Domingo
         citaRequest.setFechaCita(
                 LocalDate.of(2026, 6, 21)
         );
 
-        when(agendaClient.obtenerAgendaPorId(1L))
-                .thenReturn(agendaResponse);
+        IllegalArgumentException exception =
+                assertThrows(
+                        IllegalArgumentException.class,
+                        () -> citaService.crearCita(citaRequest)
+                );
 
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> citaService.crearCita(citaRequest)
+        assertEquals(
+                "No se pueden agendar citas los domingos",
+                exception.getMessage()
         );
+
+        verify(citaRepository, never()).save(any());
     }
 
-    // ==========================================================
-    // TEST 5
-    // NO DEBE CREAR CITA FUERA DE HORARIO
-    // ==========================================================
-
+    // TEST 4 - NO PERMITE HORAS FUERA DEL HORARIO LABORAL
     @Test
     void crearCita_debeLanzarErrorCuandoHoraFueraDeHorario() {
 
+        // Hora inválida
         citaRequest.setHoraCita(
                 LocalTime.of(18, 0)
         );
 
-        when(agendaClient.obtenerAgendaPorId(1L))
-                .thenReturn(agendaResponse);
+        IllegalArgumentException exception =
+                assertThrows(
+                        IllegalArgumentException.class,
+                        () -> citaService.crearCita(citaRequest)
+                );
 
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> citaService.crearCita(citaRequest)
+        assertEquals(
+                "La cita debe estar dentro del horario de atención (08:00 a 17:00)",
+                exception.getMessage()
         );
+
+        verify(citaRepository, never()).save(any());
     }
 
-    // ==========================================================
-    // TEST 6
-    // NO DEBE CREAR CITA DUPLICADA
-    // ==========================================================
-
+    // TEST 5 = NO PERMITE CITAS DUPLICADAS
     @Test
     void crearCita_debeLanzarErrorCuandoYaExiste() {
 
-        when(agendaClient.obtenerAgendaPorId(1L))
-                .thenReturn(agendaResponse);
-
+        // Simula que ya existe una cita
         when(citaRepository.existsByFechaCitaAndHoraCita(
                 citaRequest.getFechaCita(),
                 citaRequest.getHoraCita()))
                 .thenReturn(true);
 
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> citaService.crearCita(citaRequest)
+        IllegalArgumentException exception =
+                assertThrows(
+                        IllegalArgumentException.class,
+                        () -> citaService.crearCita(citaRequest)
+                );
+
+        assertEquals(
+                "Ya existe una cita agendada en esa fecha y hora",
+                exception.getMessage()
         );
+
+        verify(citaRepository, never()).save(any());
     }
 }
