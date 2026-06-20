@@ -1,7 +1,9 @@
 package medilink.recetamedica.service;
 
 import lombok.AllArgsConstructor;
+import medilink.recetamedica.client.CitaClient;
 import medilink.recetamedica.dto.request.RecetaMedicaRequest;
+import medilink.recetamedica.dto.response.CitaResponse;
 import medilink.recetamedica.dto.response.RecetaMedicaResponse;
 import medilink.recetamedica.exception.RecetaMedicaNoEncontrada;
 import medilink.recetamedica.mapper.RecetaMedicaMapper;
@@ -20,6 +22,7 @@ public class RecetaMedicaService {
 
     private final RecetaMedicaRepository recetaMedicaRepository;
     private final RecetaMedicaMapper recetaMedicaMapper;
+    private final CitaClient citaClient;
 
     private static final Logger log =
             LoggerFactory.getLogger(RecetaMedicaService.class);
@@ -46,6 +49,7 @@ public class RecetaMedicaService {
     public RecetaMedicaResponse crearReceta(
             RecetaMedicaRequest recetaMedicaRequest) {
 
+        validarCitaExiste(recetaMedicaRequest.getIdCita());
         validarReglasDeNegocio(recetaMedicaRequest);
 
         log.info("Creando receta médica: {}", recetaMedicaRequest);
@@ -60,25 +64,23 @@ public class RecetaMedicaService {
             Long idReceta,
             RecetaMedicaRequest recetaMedicaRequest) {
 
+        validarCitaExiste(recetaMedicaRequest.getIdCita());
+        validarReglasDeNegocio(recetaMedicaRequest);
+
         RecetaMedica receta = recetaMedicaRepository
                 .findById(idReceta)
                 .orElseThrow(() ->
                         new RecetaMedicaNoEncontrada(idReceta));
 
-        receta.setMedicamento(
-                recetaMedicaRequest.getMedicamento());
-
-        receta.setDosis(
-                recetaMedicaRequest.getDosis());
-
-        receta.setFrecuencia(
-                recetaMedicaRequest.getFrecuencia());
-
-        receta.setDuracion(
-                recetaMedicaRequest.getDuracion());
-
-        receta.setIndicaciones(
-                recetaMedicaRequest.getIndicaciones());
+        receta.setIdPaciente(recetaMedicaRequest.getIdPaciente());
+        receta.setIdProfesional(recetaMedicaRequest.getIdProfesional());
+        receta.setIdCita(recetaMedicaRequest.getIdCita());
+        receta.setFechaEmision(recetaMedicaRequest.getFechaEmision());
+        receta.setMedicamento(recetaMedicaRequest.getMedicamento());
+        receta.setDosis(recetaMedicaRequest.getDosis());
+        receta.setFrecuencia(recetaMedicaRequest.getFrecuencia());
+        receta.setDuracion(recetaMedicaRequest.getDuracion());
+        receta.setIndicaciones(recetaMedicaRequest.getIndicaciones());
 
         log.info("Receta médica con id {} actualizada",
                 idReceta);
@@ -103,6 +105,14 @@ public class RecetaMedicaService {
                 idReceta);
 
         return true;
+    }
+
+    private void validarCitaExiste(Long idCita) {
+        CitaResponse cita = citaClient.obtenerCitaPorId(idCita);
+
+        if (cita == null || cita.getIdCita() == null) {
+            throw new IllegalArgumentException("La cita asociada no existe");
+        }
     }
 
     private void validarReglasDeNegocio(

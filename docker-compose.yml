@@ -1,0 +1,289 @@
+services:
+
+  mysql-agenda:
+    image: mysql:8.0
+    container_name: medilink-mysql-agenda
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: agenda_medica
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_agenda_data:/var/lib/mysql
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  mysql-citas:
+    image: mysql:8.0
+    container_name: medilink-mysql-citas
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: citas
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql_citas_data:/var/lib/mysql
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  mysql-videollamada:
+    image: mysql:8.0
+    container_name: medilink-mysql-videollamada
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: videollamada
+    ports:
+      - "3309:3306"
+    volumes:
+      - mysql_videollamada_data:/var/lib/mysql
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  mysql-historial:
+    image: mysql:8.0
+    container_name: medilink-mysql-historial
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: historial_clinico
+    ports:
+      - "3310:3306"
+    volumes:
+      - mysql_historial_data:/var/lib/mysql
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  mysql-receta:
+    image: mysql:8.0
+    container_name: medilink-mysql-receta
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: receta_medica
+    ports:
+      - "3311:3306"
+    volumes:
+      - mysql_receta_data:/var/lib/mysql
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  mysql-pagos:
+    image: mysql:8.0
+    container_name: medilink-mysql-pagos
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: pagos
+    ports:
+      - "3312:3306"
+    volumes:
+      - mysql_pagos_data:/var/lib/mysql
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  mysql-notificacion:
+    image: mysql:8.0
+    container_name: medilink-mysql-notificacion
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: notificacion
+    ports:
+      - "3313:3306"
+    volumes:
+      - mysql_notificacion_data:/var/lib/mysql
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  mysql-evaluacion:
+    image: mysql:8.0
+    container_name: medilink-mysql-evaluacion
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: evaluacion_atencion
+    ports:
+      - "3314:3306"
+    volumes:
+      - mysql_evaluacion_data:/var/lib/mysql
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  eureka-server:
+    build:
+      context: ./eureka-server
+      dockerfile: Dockerfile
+    container_name: medilink-eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  agenda-medica:
+    build:
+      context: ./agenda_medica
+      dockerfile: Dockerfile
+    container_name: medilink-agenda-medica
+    ports:
+      - "3004:3004"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mysql-agenda
+      - eureka-server
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  cita:
+    build:
+      context: ./cita
+      dockerfile: Dockerfile
+    container_name: medilink-citas
+    ports:
+      - "3006:3006"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mysql-citas
+      - eureka-server
+      - agenda-medica
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+
+  videollamada:
+    build:
+      context: ./videollamada
+      dockerfile: Dockerfile
+    container_name: medilink-videollamada
+    ports:
+      - "3011:3011"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mysql-videollamada
+      - eureka-server
+      - cita
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  historial-clinico:
+    build:
+      context: ./historial_clinico
+      dockerfile: Dockerfile
+    container_name: medilink-historial-clinico
+    ports:
+      - "3007:3007"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mysql-historial
+      - eureka-server
+      - cita
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  receta-medica:
+    build:
+      context: ./receta_medica
+      dockerfile: Dockerfile
+    container_name: medilink-receta-medica
+    ports:
+      - "3008:3008"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mysql-receta
+      - eureka-server
+      - cita
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  pago:
+    build:
+      context: ./pago
+      dockerfile: Dockerfile
+    container_name: medilink-pagos
+    ports:
+      - "3010:3010"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mysql-pagos
+      - eureka-server
+      - cita
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  notificacion:
+    build:
+      context: ./notificacion
+      dockerfile: Dockerfile
+    container_name: medilink-notificacion
+    ports:
+      - "3005:3005"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mysql-notificacion
+      - eureka-server
+      - cita
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  evaluacion-atencion:
+    build:
+      context: ./evaluacion_atencion
+      dockerfile: Dockerfile
+    container_name: medilink-evaluacion-atencion
+    ports:
+      - "3009:3009"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mysql-evaluacion
+      - eureka-server
+      - cita
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    container_name: medilink-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - eureka-server
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+volumes:
+  mysql_agenda_data:
+  mysql_citas_data:
+  mysql_videollamada_data:
+  mysql_historial_data:
+  mysql_receta_data:
+  mysql_pagos_data:
+  mysql_notificacion_data:
+  mysql_evaluacion_data:
+
+networks:
+  medilink-net:
+    driver: bridge

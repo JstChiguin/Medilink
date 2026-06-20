@@ -1,7 +1,9 @@
 package medilink.historialclinico.service;
 
 import lombok.AllArgsConstructor;
+import medilink.historialclinico.client.CitaClient;
 import medilink.historialclinico.dto.request.HistorialClinicoRequest;
+import medilink.historialclinico.dto.response.CitaResponse;
 import medilink.historialclinico.dto.response.HistorialClinicoResponse;
 import medilink.historialclinico.exception.HistorialClinicoNoEncontrado;
 import medilink.historialclinico.mapper.HistorialClinicoMapper;
@@ -20,6 +22,7 @@ public class HistorialClinicoService {
 
     private final HistorialClinicoRepository historialClinicoRepository;
     private final HistorialClinicoMapper historialClinicoMapper;
+    private final CitaClient citaClient;
 
     private static final Logger log =
             LoggerFactory.getLogger(HistorialClinicoService.class);
@@ -45,6 +48,7 @@ public class HistorialClinicoService {
     public HistorialClinicoResponse crearHistorial(
             HistorialClinicoRequest historialClinicoRequest) {
 
+        validarCitaExiste(historialClinicoRequest.getIdCita());
         validarReglasDeNegocio(historialClinicoRequest);
 
         log.info("Creando historial clínico: {}",
@@ -79,25 +83,35 @@ public class HistorialClinicoService {
             Long idHistorial,
             HistorialClinicoRequest historialClinicoRequest) {
 
+        validarCitaExiste(historialClinicoRequest.getIdCita());
+        validarReglasDeNegocio(historialClinicoRequest);
+
         HistorialClinico historial = historialClinicoRepository
                 .findById(idHistorial)
                 .orElseThrow(() ->
                         new HistorialClinicoNoEncontrado(idHistorial));
 
-        historial.setDiagnostico(
-                historialClinicoRequest.getDiagnostico());
-
-        historial.setObservaciones(
-                historialClinicoRequest.getObservaciones());
-
-        historial.setRecomendaciones(
-                historialClinicoRequest.getRecomendaciones());
+        historial.setIdPaciente(historialClinicoRequest.getIdPaciente());
+        historial.setIdProfesional(historialClinicoRequest.getIdProfesional());
+        historial.setIdCita(historialClinicoRequest.getIdCita());
+        historial.setFechaAtencion(historialClinicoRequest.getFechaAtencion());
+        historial.setDiagnostico(historialClinicoRequest.getDiagnostico());
+        historial.setObservaciones(historialClinicoRequest.getObservaciones());
+        historial.setRecomendaciones(historialClinicoRequest.getRecomendaciones());
 
         log.info("Historial clínico con id {} actualizado",
                 idHistorial);
 
         return historialClinicoMapper.toResponse(
                 historialClinicoRepository.save(historial));
+    }
+
+    private void validarCitaExiste(Long idCita) {
+        CitaResponse cita = citaClient.obtenerCitaPorId(idCita);
+
+        if (cita == null || cita.getIdCita() == null) {
+            throw new IllegalArgumentException("La cita asociada no existe");
+        }
     }
 
     private void validarReglasDeNegocio(

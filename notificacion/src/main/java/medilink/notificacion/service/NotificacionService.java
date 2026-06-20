@@ -1,7 +1,9 @@
 package medilink.notificacion.service;
 
 import lombok.AllArgsConstructor;
+import medilink.notificacion.client.CitaClient;
 import medilink.notificacion.dto.request.NotificacionRequest;
+import medilink.notificacion.dto.response.CitaResponse;
 import medilink.notificacion.dto.response.NotificacionResponse;
 import medilink.notificacion.exception.NotificacionNoEncontrada;
 import medilink.notificacion.mapper.NotificacionMapper;
@@ -17,6 +19,7 @@ public class NotificacionService {
 
     private final NotificacionRepository notificacionRepository;
     private final NotificacionMapper notificacionMapper;
+    private final CitaClient citaClient;
 
     public List<NotificacionResponse> obtenerTodasLasNotificaciones() {
 
@@ -39,6 +42,14 @@ public class NotificacionService {
     public NotificacionResponse crearNotificacion(
             NotificacionRequest request) {
 
+        // Consumo al microservicio Cita:
+        // valida que la cita exista antes de crear la notificación.
+        CitaResponse cita = citaClient.obtenerCitaPorId(request.getIdCita());
+
+        if (cita == null || cita.getIdCita() == null) {
+            throw new IllegalArgumentException("La cita asociada no existe");
+        }
+
         Notificacion notificacion =
                 notificacionMapper.toEntity(request);
 
@@ -55,6 +66,14 @@ public class NotificacionService {
                 .findById(idNotificacion)
                 .orElseThrow(() ->
                         new NotificacionNoEncontrada(idNotificacion));
+
+        // Consumo al microservicio Cita:
+        // valida que la cita exista antes de actualizar la notificación.
+        CitaResponse cita = citaClient.obtenerCitaPorId(request.getIdCita());
+
+        if (cita == null || cita.getIdCita() == null) {
+            throw new IllegalArgumentException("La cita asociada no existe");
+        }
 
         notificacion.setIdPaciente(request.getIdPaciente());
         notificacion.setIdProfesional(request.getIdProfesional());
