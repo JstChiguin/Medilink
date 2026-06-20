@@ -1,6 +1,5 @@
 package medilink.cita.service;
 
-// IMPORTS DEL PROYECTO
 import medilink.cita.client.AgendaClient;
 import medilink.cita.dto.request.CitaRequest;
 import medilink.cita.dto.response.CitaResponse;
@@ -10,8 +9,6 @@ import medilink.cita.model.enums.EstadoCita;
 import medilink.cita.model.enums.ModalidadCita;
 import medilink.cita.repository.CitaRepository;
 
-
-// IMPORTS JUNIT Y MOCKITO
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
