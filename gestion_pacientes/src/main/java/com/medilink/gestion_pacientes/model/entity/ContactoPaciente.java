@@ -1,9 +1,7 @@
-package com.medilink.gestion_pacientes.model;
+package com.medilink.gestion_pacientes.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -32,7 +30,5 @@ public class ContactoPaciente {
     private String telefonoContactoEmergencia;
 
 }
-//    CREAR_CONTACTO()
-//    ACTUALIZAR_CONTACTO()
-//OBTENER CONTACTO POR PACIENTE(idPaciente)
+
 

@@ -8,7 +8,7 @@ import com.medilink.gestion_pacientes.exception.DocumentoDuplicadoException;
 import com.medilink.gestion_pacientes.exception.PacienteNoEncontradoException;
 import com.medilink.gestion_pacientes.exception.UsuarioNoEcontradoException;
 import com.medilink.gestion_pacientes.mapper.PacienteMapper;
-import com.medilink.gestion_pacientes.model.Paciente;
+import com.medilink.gestion_pacientes.model.entity.Paciente;
 import com.medilink.gestion_pacientes.repository.PacienteRepository;
 import com.medilink.gestion_pacientes.dto.response.PacienteResponse;
 
@@ -27,7 +27,21 @@ public class PacienteService {
     private final ClienteUsuario clienteUsuario;
 
     public List<PacienteResponse> listarPacientes() {
-        return pacienteMapper.toResponseList(pacienteRepository.findAll());
+        return pacienteRepository.findAll().stream()
+                .map(paciente -> {
+                    PacienteResponse response = pacienteMapper.toResponse(paciente);
+                    try {
+                        UsuarioResponse usuarioResponse = clienteUsuario.obtenerUsuarioPorId(paciente.getIdUsuario());
+                        if (usuarioResponse != null) {
+                            response.setUsuario(UsuarioLimitado.builder()
+                                    .correoUsuario(usuarioResponse.getCorreoUsuario())
+                                    .build());
+                        }
+                    } catch (Exception e) {
+                    }
+                    return response;
+                })
+                .toList();
     }
 
     public PacienteResponse buscarPorId(Long idPaciente) {
