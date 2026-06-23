@@ -1,5 +1,7 @@
-package com.medilink.usuario.modelo;
+package com.medilink.usuario.modelo.entity;
 
+import com.medilink.usuario.modelo.enums.EstadoUsuario;
+import com.medilink.usuario.modelo.enums.RolUsuario;
 import jakarta.persistence.*;
 import lombok.Data;
 

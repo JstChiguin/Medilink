@@ -1,4 +1,4 @@
-package com.medilink.usuario.modelo;
+package com.medilink.usuario.modelo.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

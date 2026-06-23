@@ -2,7 +2,7 @@ package com.medilink.gestion_pacientes.mapper;
 
 import com.medilink.gestion_pacientes.dto.request.PacienteRequest;
 import com.medilink.gestion_pacientes.dto.response.PacienteResponse;
-import com.medilink.gestion_pacientes.model.Paciente;
+import com.medilink.gestion_pacientes.model.entity.Paciente;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

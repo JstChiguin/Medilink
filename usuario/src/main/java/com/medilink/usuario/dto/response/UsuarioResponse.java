@@ -1,9 +1,7 @@
 package com.medilink.usuario.dto.response;
 
-import com.medilink.usuario.modelo.EstadoUsuario;
-import com.medilink.usuario.modelo.RolUsuario;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import com.medilink.usuario.modelo.enums.EstadoUsuario;
+import com.medilink.usuario.modelo.enums.RolUsuario;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -18,4 +16,5 @@ public class UsuarioResponse {
     private RolUsuario rolUsuario;
     private EstadoUsuario estadoUsuario;
     private LocalDate fechaRegistroUsuario;
+
 }

@@ -3,7 +3,7 @@ package com.medilink.gestion_pacientes.mapper;
 
 import com.medilink.gestion_pacientes.dto.request.ContactoPacienteRequest;
 import com.medilink.gestion_pacientes.dto.response.ContactoPacienteResponse;
-import com.medilink.gestion_pacientes.model.ContactoPaciente;
+import com.medilink.gestion_pacientes.model.entity.ContactoPaciente;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

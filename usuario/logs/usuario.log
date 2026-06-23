@@ -1920,3 +1920,494 @@ com.mysql.cj.exceptions.NumberOutOfRange: Value 'Inactivo' is outside of valid r
 2026-06-19T20:07:21.324-04:00  INFO 15924 --- [usuario] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-19T20:07:21.328-04:00  INFO 15924 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-06-19T20:07:21.334-04:00  INFO 15924 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+<<<<<<< Updated upstream
+=======
+2026-06-22T12:39:27.119-04:00  INFO 23876 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Starting UsuarioApplication using Java 21.0.10 with PID 23876 (C:\Users\Vicky\Desktop\Medilink-vicky\usuario\target\classes started by Vicky in C:\Users\Vicky\Desktop\Medilink-vicky)
+2026-06-22T12:39:27.141-04:00  INFO 23876 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T12:39:30.361-04:00  INFO 23876 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22T12:39:30.543-04:00  INFO 23876 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 151 ms. Found 1 JPA repository interface.
+2026-06-22T12:39:31.066-04:00  INFO 23876 --- [usuario] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=78fff474-d47e-37af-a49c-4841e5dc47c6
+2026-06-22T12:39:32.377-04:00  INFO 23876 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3001 (http)
+2026-06-22T12:39:32.415-04:00  INFO 23876 --- [usuario] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-22T12:39:32.416-04:00  INFO 23876 --- [usuario] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-06-22T12:39:32.605-04:00  INFO 23876 --- [usuario] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-22T12:39:32.606-04:00  INFO 23876 --- [usuario] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5309 ms
+2026-06-22T12:39:33.868-04:00  INFO 23876 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-22T12:39:34.899-04:00  INFO 23876 --- [usuario] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45b7c97f
+2026-06-22T12:39:34.909-04:00  INFO 23876 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-22T12:39:35.345-04:00  INFO 23876 --- [usuario] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/usuario (MySQL 5.5)
+2026-06-22T12:39:35.615-04:00  INFO 23876 --- [usuario] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.192s)
+2026-06-22T12:39:35.663-04:00  INFO 23876 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `usuario`: 2
+2026-06-22T12:39:35.677-04:00  INFO 23876 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Schema `usuario` is up to date. No migration necessary.
+2026-06-22T12:39:36.012-04:00  INFO 23876 --- [usuario] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-22T12:39:36.288-04:00  INFO 23876 --- [usuario] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2026-06-22T12:39:36.466-04:00  INFO 23876 --- [usuario] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-22T12:39:37.570-04:00  INFO 24216 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Starting UsuarioApplication using Java 21.0.10 with PID 24216 (C:\Users\Vicky\Desktop\Medilink-vicky\usuario\target\classes started by Vicky in C:\Users\Vicky\Desktop\Medilink-vicky)
+2026-06-22T12:39:37.587-04:00  INFO 24216 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T12:39:37.859-04:00  INFO 23876 --- [usuario] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22T12:39:38.245-04:00  WARN 23876 --- [usuario] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-22T12:39:38.336-04:00  INFO 23876 --- [usuario] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22T12:39:41.364-04:00  INFO 24216 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22T12:39:41.697-04:00  INFO 24216 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 274 ms. Found 1 JPA repository interface.
+2026-06-22T12:39:42.615-04:00  INFO 24216 --- [usuario] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=78fff474-d47e-37af-a49c-4841e5dc47c6
+2026-06-22T12:39:42.672-04:00  INFO 23876 --- [usuario] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22T12:39:42.998-04:00  INFO 23876 --- [usuario] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T12:39:44.403-04:00  INFO 24216 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3001 (http)
+2026-06-22T12:39:44.460-04:00  INFO 24216 --- [usuario] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-22T12:39:44.462-04:00  INFO 24216 --- [usuario] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-06-22T12:39:44.737-04:00  WARN 23876 --- [usuario] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T12:39:44.825-04:00  INFO 24216 --- [usuario] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-22T12:39:44.828-04:00  INFO 24216 --- [usuario] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7019 ms
+2026-06-22T12:39:45.631-04:00  INFO 6204 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Starting UsuarioApplication using Java 21.0.10 with PID 6204 (C:\Users\Vicky\Desktop\Medilink-vicky\usuario\target\classes started by Vicky in C:\Users\Vicky\Desktop\Medilink-vicky)
+2026-06-22T12:39:45.642-04:00  INFO 6204 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T12:39:46.367-04:00  INFO 24216 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-22T12:39:47.316-04:00  INFO 24216 --- [usuario] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23e2c1ca
+2026-06-22T12:39:47.326-04:00  INFO 24216 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-22T12:39:47.875-04:00  INFO 24216 --- [usuario] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/usuario (MySQL 5.5)
+2026-06-22T12:39:48.020-04:00  INFO 23876 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3001 (http) with context path '/'
+2026-06-22T12:39:48.068-04:00  INFO 23876 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Started UsuarioApplication in 22.58 seconds (process running for 25.151)
+2026-06-22T12:39:48.087-04:00  INFO 24216 --- [usuario] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.132s)
+2026-06-22T12:39:48.154-04:00  INFO 24216 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `usuario`: 2
+2026-06-22T12:39:48.169-04:00  INFO 24216 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Schema `usuario` is up to date. No migration necessary.
+2026-06-22T12:39:48.586-04:00  INFO 24216 --- [usuario] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-22T12:39:48.898-04:00  INFO 24216 --- [usuario] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2026-06-22T12:39:49.107-04:00  INFO 24216 --- [usuario] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-22T12:39:50.254-04:00  INFO 6204 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22T12:39:50.648-04:00  INFO 6204 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 281 ms. Found 1 JPA repository interface.
+2026-06-22T12:39:50.989-04:00  INFO 24216 --- [usuario] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22T12:39:51.440-04:00  WARN 24216 --- [usuario] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-22T12:39:51.465-04:00  INFO 23876 --- [usuario] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-22T12:39:51.490-04:00  INFO 23876 --- [usuario] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-22T12:39:51.502-04:00  INFO 23876 --- [usuario] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T12:39:51.509-04:00  INFO 23876 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-22T12:39:51.534-04:00  INFO 24216 --- [usuario] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22T12:39:51.537-04:00  INFO 23876 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-22T12:39:51.601-04:00  INFO 6204 --- [usuario] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=78fff474-d47e-37af-a49c-4841e5dc47c6
+2026-06-22T12:39:54.272-04:00  INFO 6204 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3001 (http)
+2026-06-22T12:39:54.334-04:00  INFO 6204 --- [usuario] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-22T12:39:54.337-04:00  INFO 6204 --- [usuario] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-06-22T12:39:54.691-04:00  INFO 6204 --- [usuario] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-22T12:39:54.693-04:00  INFO 6204 --- [usuario] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8872 ms
+2026-06-22T12:39:55.728-04:00  INFO 6204 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-22T12:39:56.310-04:00  INFO 23252 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Starting UsuarioApplication using Java 21.0.10 with PID 23252 (C:\Users\Vicky\Desktop\Medilink-vicky\usuario\target\classes started by Vicky in C:\Users\Vicky\Desktop\Medilink-vicky)
+2026-06-22T12:39:56.321-04:00  INFO 23252 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T12:39:56.376-04:00  INFO 6204 --- [usuario] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b377a53
+2026-06-22T12:39:56.386-04:00  INFO 6204 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-22T12:39:56.834-04:00  INFO 24216 --- [usuario] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22T12:39:56.919-04:00  INFO 6204 --- [usuario] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/usuario (MySQL 5.5)
+2026-06-22T12:39:57.114-04:00  INFO 24216 --- [usuario] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T12:39:57.141-04:00  INFO 6204 --- [usuario] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.142s)
+2026-06-22T12:39:57.195-04:00  INFO 6204 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `usuario`: 2
+2026-06-22T12:39:57.208-04:00  INFO 6204 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Schema `usuario` is up to date. No migration necessary.
+2026-06-22T12:39:57.571-04:00  INFO 6204 --- [usuario] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-22T12:39:57.884-04:00  INFO 6204 --- [usuario] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2026-06-22T12:39:58.038-04:00  INFO 6204 --- [usuario] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-22T12:39:58.817-04:00  WARN 24216 --- [usuario] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T12:39:59.503-04:00  INFO 6204 --- [usuario] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22T12:39:59.758-04:00  WARN 6204 --- [usuario] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-22T12:39:59.813-04:00  INFO 6204 --- [usuario] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22T12:39:59.891-04:00  INFO 23252 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22T12:40:00.085-04:00  INFO 23252 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 168 ms. Found 1 JPA repository interface.
+2026-06-22T12:40:01.107-04:00  INFO 23252 --- [usuario] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=78fff474-d47e-37af-a49c-4841e5dc47c6
+2026-06-22T12:40:01.486-04:00  INFO 24216 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3001 (http) with context path '/'
+2026-06-22T12:40:01.537-04:00  INFO 24216 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Started UsuarioApplication in 25.933 seconds (process running for 28.255)
+2026-06-22T12:40:01.807-04:00  INFO 24216 --- [usuario] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-22T12:40:01.843-04:00  INFO 24216 --- [usuario] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-22T12:40:01.856-04:00  INFO 24216 --- [usuario] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T12:40:01.864-04:00  INFO 24216 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-22T12:40:01.893-04:00  INFO 24216 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-22T12:40:03.008-04:00  INFO 23252 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3001 (http)
+2026-06-22T12:40:03.089-04:00  INFO 23252 --- [usuario] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-22T12:40:03.093-04:00  INFO 23252 --- [usuario] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-06-22T12:40:03.725-04:00  INFO 23252 --- [usuario] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7245 ms
+2026-06-22T12:40:04.789-04:00  INFO 6204 --- [usuario] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22T12:40:05.023-04:00  INFO 23252 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-22T12:40:05.072-04:00  INFO 6204 --- [usuario] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T12:40:05.750-04:00  INFO 27148 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Starting UsuarioApplication using Java 21.0.10 with PID 27148 (C:\Users\Vicky\Desktop\Medilink-vicky\usuario\target\classes started by Vicky in C:\Users\Vicky\Desktop\Medilink-vicky)
+2026-06-22T12:40:05.756-04:00  INFO 23252 --- [usuario] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23e2c1ca
+2026-06-22T12:40:05.759-04:00  INFO 27148 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T12:40:05.773-04:00  INFO 23252 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-22T12:40:06.231-04:00  INFO 23252 --- [usuario] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/usuario (MySQL 5.5)
+2026-06-22T12:40:06.448-04:00  INFO 23252 --- [usuario] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.130s)
+2026-06-22T12:40:06.502-04:00  INFO 23252 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `usuario`: 2
+2026-06-22T12:40:06.511-04:00  INFO 23252 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Schema `usuario` is up to date. No migration necessary.
+2026-06-22T12:40:06.887-04:00  INFO 23252 --- [usuario] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-22T12:40:06.997-04:00  WARN 6204 --- [usuario] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T12:40:07.238-04:00  INFO 23252 --- [usuario] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2026-06-22T12:40:07.427-04:00  INFO 23252 --- [usuario] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-22T12:40:09.059-04:00  INFO 23252 --- [usuario] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22T12:40:09.356-04:00  WARN 23252 --- [usuario] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-22T12:40:09.431-04:00  INFO 23252 --- [usuario] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22T12:40:09.634-04:00  INFO 27148 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22T12:40:09.738-04:00  INFO 6204 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3001 (http) with context path '/'
+2026-06-22T12:40:09.777-04:00  INFO 6204 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Started UsuarioApplication in 26.395 seconds (process running for 28.992)
+2026-06-22T12:40:09.785-04:00  INFO 6204 --- [usuario] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-22T12:40:09.803-04:00  INFO 6204 --- [usuario] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-22T12:40:09.814-04:00  INFO 6204 --- [usuario] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T12:40:09.820-04:00  INFO 6204 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-22T12:40:09.841-04:00  INFO 6204 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-22T12:40:09.860-04:00  INFO 27148 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 192 ms. Found 1 JPA repository interface.
+2026-06-22T12:40:10.622-04:00  INFO 27148 --- [usuario] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=78fff474-d47e-37af-a49c-4841e5dc47c6
+2026-06-22T12:40:12.462-04:00  INFO 27148 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3001 (http)
+2026-06-22T12:40:12.501-04:00  INFO 27148 --- [usuario] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-22T12:40:12.502-04:00  INFO 27148 --- [usuario] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-06-22T12:40:12.690-04:00  INFO 27148 --- [usuario] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-22T12:40:12.692-04:00  INFO 27148 --- [usuario] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6750 ms
+2026-06-22T12:40:13.220-04:00  INFO 23252 --- [usuario] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22T12:40:13.387-04:00  INFO 23252 --- [usuario] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T12:40:13.461-04:00  INFO 27148 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-22T12:40:13.990-04:00  INFO 27148 --- [usuario] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59262a90
+2026-06-22T12:40:13.994-04:00  INFO 27148 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-22T12:40:14.330-04:00  INFO 27148 --- [usuario] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/usuario (MySQL 5.5)
+2026-06-22T12:40:14.479-04:00  INFO 27148 --- [usuario] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.096s)
+2026-06-22T12:40:14.514-04:00  INFO 27148 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `usuario`: 2
+2026-06-22T12:40:14.522-04:00  INFO 27148 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Schema `usuario` is up to date. No migration necessary.
+2026-06-22T12:40:14.602-04:00  WARN 23252 --- [usuario] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T12:40:14.806-04:00  INFO 27148 --- [usuario] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-22T12:40:15.061-04:00  INFO 27148 --- [usuario] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2026-06-22T12:40:15.178-04:00  INFO 27148 --- [usuario] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-22T12:40:16.147-04:00  INFO 27148 --- [usuario] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22T12:40:16.339-04:00  WARN 27148 --- [usuario] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-22T12:40:16.429-04:00  INFO 23252 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3001 (http) with context path '/'
+2026-06-22T12:40:16.450-04:00  INFO 27148 --- [usuario] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22T12:40:16.479-04:00  INFO 23252 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Started UsuarioApplication in 22.22 seconds (process running for 25.487)
+2026-06-22T12:40:16.485-04:00  INFO 23252 --- [usuario] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-22T12:40:16.502-04:00  INFO 23252 --- [usuario] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-22T12:40:16.510-04:00  INFO 23252 --- [usuario] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T12:40:16.515-04:00  INFO 23252 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-22T12:40:16.534-04:00  INFO 23252 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-22T12:40:19.311-04:00  INFO 27148 --- [usuario] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22T12:40:19.472-04:00  INFO 27148 --- [usuario] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T12:40:20.677-04:00  WARN 27148 --- [usuario] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T12:40:22.315-04:00  INFO 27148 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3001 (http) with context path '/'
+2026-06-22T12:40:22.353-04:00  INFO 27148 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Started UsuarioApplication in 19.325 seconds (process running for 21.8)
+2026-06-22T12:40:51.800-04:00  INFO 27148 --- [usuario] [http-nio-3001-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-22T12:40:51.801-04:00  INFO 27148 --- [usuario] [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-22T12:40:51.804-04:00  INFO 27148 --- [usuario] [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-22T12:45:31.895-04:00  INFO 27148 --- [usuario] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-22T12:45:31.914-04:00  INFO 27148 --- [usuario] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-22T12:45:31.924-04:00  INFO 27148 --- [usuario] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T12:45:31.929-04:00  INFO 27148 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-22T12:45:31.946-04:00  INFO 27148 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-22T12:45:52.222-04:00  INFO 16304 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Starting UsuarioApplication using Java 21.0.10 with PID 16304 (C:\Users\Vicky\Desktop\Medilink-vicky\usuario\target\classes started by Vicky in C:\Users\Vicky\Desktop\Medilink-vicky)
+2026-06-22T12:45:52.229-04:00  INFO 16304 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T12:45:54.909-04:00  INFO 16304 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22T12:45:55.081-04:00  INFO 16304 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 147 ms. Found 1 JPA repository interface.
+2026-06-22T12:45:55.581-04:00  INFO 16304 --- [usuario] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=78fff474-d47e-37af-a49c-4841e5dc47c6
+2026-06-22T12:45:56.629-04:00  INFO 16304 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3001 (http)
+2026-06-22T12:45:56.666-04:00  INFO 16304 --- [usuario] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-22T12:45:56.667-04:00  INFO 16304 --- [usuario] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-06-22T12:45:56.864-04:00  INFO 16304 --- [usuario] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-22T12:45:56.866-04:00  INFO 16304 --- [usuario] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4514 ms
+2026-06-22T12:45:57.579-04:00  INFO 16304 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-22T12:45:58.037-04:00  INFO 16304 --- [usuario] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@25214797
+2026-06-22T12:45:58.042-04:00  INFO 16304 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-22T12:45:58.381-04:00  INFO 16304 --- [usuario] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/usuario (MySQL 5.5)
+2026-06-22T12:45:58.564-04:00  INFO 16304 --- [usuario] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.125s)
+2026-06-22T12:45:58.618-04:00  INFO 16304 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `usuario`: 2
+2026-06-22T12:45:58.632-04:00  INFO 16304 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Schema `usuario` is up to date. No migration necessary.
+2026-06-22T12:45:58.949-04:00  INFO 16304 --- [usuario] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-22T12:45:59.169-04:00  INFO 16304 --- [usuario] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2026-06-22T12:45:59.303-04:00  INFO 16304 --- [usuario] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-22T12:46:00.338-04:00  INFO 16304 --- [usuario] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22T12:46:00.513-04:00  WARN 16304 --- [usuario] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-22T12:46:00.579-04:00  INFO 16304 --- [usuario] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22T12:46:02.957-04:00  INFO 16304 --- [usuario] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22T12:46:03.078-04:00  INFO 16304 --- [usuario] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T12:46:04.273-04:00  WARN 16304 --- [usuario] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T12:46:05.987-04:00  INFO 16304 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3001 (http) with context path '/'
+2026-06-22T12:46:06.020-04:00  INFO 16304 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Started UsuarioApplication in 15.586 seconds (process running for 17.393)
+2026-06-22T12:46:06.026-04:00  INFO 16304 --- [usuario] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-22T12:46:06.040-04:00  INFO 16304 --- [usuario] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-22T12:46:06.049-04:00  INFO 16304 --- [usuario] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T12:46:06.054-04:00  INFO 16304 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-22T12:46:06.070-04:00  INFO 16304 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-22T12:46:11.535-04:00  INFO 21744 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Starting UsuarioApplication using Java 21.0.10 with PID 21744 (C:\Users\Vicky\Desktop\Medilink-vicky\usuario\target\classes started by Vicky in C:\Users\Vicky\Desktop\Medilink-vicky)
+2026-06-22T12:46:11.544-04:00  INFO 21744 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T12:46:14.029-04:00  INFO 21744 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22T12:46:14.203-04:00  INFO 21744 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 140 ms. Found 1 JPA repository interface.
+2026-06-22T12:46:14.688-04:00  INFO 21744 --- [usuario] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=78fff474-d47e-37af-a49c-4841e5dc47c6
+2026-06-22T12:46:15.719-04:00  INFO 21744 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3001 (http)
+2026-06-22T12:46:15.756-04:00  INFO 21744 --- [usuario] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-22T12:46:15.758-04:00  INFO 21744 --- [usuario] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-06-22T12:46:15.946-04:00  INFO 21744 --- [usuario] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-22T12:46:15.948-04:00  INFO 21744 --- [usuario] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4275 ms
+2026-06-22T12:46:16.780-04:00  INFO 21744 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-22T12:46:17.325-04:00  INFO 21744 --- [usuario] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@50a7c72b
+2026-06-22T12:46:17.332-04:00  INFO 21744 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-22T12:46:17.785-04:00  INFO 21744 --- [usuario] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/usuario (MySQL 5.5)
+2026-06-22T12:46:17.956-04:00  INFO 21744 --- [usuario] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.106s)
+2026-06-22T12:46:17.997-04:00  INFO 21744 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `usuario`: 2
+2026-06-22T12:46:18.007-04:00  INFO 21744 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Schema `usuario` is up to date. No migration necessary.
+2026-06-22T12:46:18.303-04:00  INFO 21744 --- [usuario] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-22T12:46:18.516-04:00  INFO 21744 --- [usuario] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2026-06-22T12:46:18.656-04:00  INFO 21744 --- [usuario] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-22T12:46:19.749-04:00  INFO 21744 --- [usuario] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22T12:46:20.045-04:00  WARN 21744 --- [usuario] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-22T12:46:20.127-04:00  INFO 21744 --- [usuario] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22T12:46:23.218-04:00  INFO 21744 --- [usuario] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22T12:46:23.357-04:00  INFO 21744 --- [usuario] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T12:46:24.441-04:00  WARN 21744 --- [usuario] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T12:46:26.116-04:00  INFO 21744 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3001 (http) with context path '/'
+2026-06-22T12:46:26.151-04:00  INFO 21744 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Started UsuarioApplication in 16.231 seconds (process running for 17.874)
+2026-06-22T12:46:36.560-04:00  INFO 21744 --- [usuario] [http-nio-3001-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-22T12:46:36.562-04:00  INFO 21744 --- [usuario] [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-22T12:46:36.568-04:00  INFO 21744 --- [usuario] [http-nio-3001-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2026-06-22T12:46:38.399-04:00  INFO 21744 --- [usuario] [http-nio-3001-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1063 ms
+2026-06-22T14:25:33.415-04:00  WARN 21744 --- [usuario] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h24m45s813ms109µs200ns).
+2026-06-22T14:36:49.907-04:00  INFO 21744 --- [usuario] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-22T14:36:49.927-04:00  INFO 21744 --- [usuario] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-22T14:36:49.939-04:00  INFO 21744 --- [usuario] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T14:36:49.945-04:00  INFO 21744 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-22T14:36:49.954-04:00  INFO 21744 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-22T15:47:49.830-04:00  INFO 17048 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Starting UsuarioApplication using Java 21.0.10 with PID 17048 (C:\Users\Vicky\Desktop\Medilink-vicky\usuario\target\classes started by Vicky in C:\Users\Vicky\Desktop\Medilink-vicky)
+2026-06-22T15:47:49.846-04:00  INFO 17048 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T15:47:53.302-04:00  INFO 17048 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22T15:47:53.460-04:00  INFO 17048 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 1 JPA repository interface.
+2026-06-22T15:47:54.260-04:00  INFO 17048 --- [usuario] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=78fff474-d47e-37af-a49c-4841e5dc47c6
+2026-06-22T15:47:56.131-04:00  INFO 17048 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3001 (http)
+2026-06-22T15:47:56.177-04:00  INFO 17048 --- [usuario] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-22T15:47:56.179-04:00  INFO 17048 --- [usuario] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-06-22T15:47:56.395-04:00  INFO 17048 --- [usuario] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-22T15:47:56.397-04:00  INFO 17048 --- [usuario] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6343 ms
+2026-06-22T15:47:57.323-04:00  INFO 17048 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-22T15:47:58.025-04:00  INFO 17048 --- [usuario] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1b0e031b
+2026-06-22T15:47:58.036-04:00  INFO 17048 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-22T15:47:58.440-04:00  INFO 17048 --- [usuario] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/usuario (MySQL 5.5)
+2026-06-22T15:47:58.602-04:00  INFO 17048 --- [usuario] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.100s)
+2026-06-22T15:47:58.646-04:00  INFO 17048 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `usuario`: 2
+2026-06-22T15:47:58.655-04:00  INFO 17048 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Schema `usuario` is up to date. No migration necessary.
+2026-06-22T15:47:58.899-04:00  INFO 17048 --- [usuario] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-22T15:47:59.046-04:00  INFO 17048 --- [usuario] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2026-06-22T15:47:59.184-04:00  INFO 17048 --- [usuario] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-22T15:48:00.249-04:00  INFO 17048 --- [usuario] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22T15:48:00.543-04:00  WARN 17048 --- [usuario] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-22T15:48:00.606-04:00  INFO 17048 --- [usuario] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22T15:48:03.811-04:00  INFO 17048 --- [usuario] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22T15:48:03.946-04:00  INFO 17048 --- [usuario] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T15:48:05.186-04:00  WARN 17048 --- [usuario] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T15:48:06.994-04:00  INFO 17048 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3001 (http) with context path '/'
+2026-06-22T15:48:07.026-04:00  INFO 17048 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Started UsuarioApplication in 19.648 seconds (process running for 22.328)
+2026-06-22T15:51:51.863-04:00  INFO 17048 --- [usuario] [http-nio-3001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-22T15:51:51.863-04:00  INFO 17048 --- [usuario] [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-22T15:51:51.866-04:00  INFO 17048 --- [usuario] [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-06-22T15:51:53.823-04:00  INFO 17048 --- [usuario] [http-nio-3001-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1114 ms
+2026-06-22T16:07:07.708-04:00  INFO 17048 --- [usuario] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-22T16:07:07.721-04:00  INFO 17048 --- [usuario] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-22T16:07:07.729-04:00  INFO 17048 --- [usuario] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T16:07:07.733-04:00  INFO 17048 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-22T16:07:07.744-04:00  INFO 17048 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-22T16:07:19.628-04:00  INFO 28556 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Starting UsuarioApplication using Java 21.0.10 with PID 28556 (C:\Users\Vicky\Desktop\Medilink-vicky\usuario\target\classes started by Vicky in C:\Users\Vicky\Desktop\Medilink-vicky)
+2026-06-22T16:07:19.632-04:00  INFO 28556 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T16:07:22.125-04:00  INFO 28556 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22T16:07:22.281-04:00  INFO 28556 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 1 JPA repository interface.
+2026-06-22T16:07:22.651-04:00  INFO 28556 --- [usuario] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=78fff474-d47e-37af-a49c-4841e5dc47c6
+2026-06-22T16:07:23.603-04:00  INFO 28556 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3001 (http)
+2026-06-22T16:07:23.642-04:00  INFO 28556 --- [usuario] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-22T16:07:23.643-04:00  INFO 28556 --- [usuario] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-06-22T16:07:23.843-04:00  INFO 28556 --- [usuario] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-22T16:07:23.845-04:00  INFO 28556 --- [usuario] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4118 ms
+2026-06-22T16:07:24.461-04:00  INFO 28556 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-22T16:07:24.826-04:00  INFO 28556 --- [usuario] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@25214797
+2026-06-22T16:07:24.832-04:00  INFO 28556 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-22T16:07:25.114-04:00  INFO 28556 --- [usuario] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/usuario (MySQL 5.5)
+2026-06-22T16:07:25.227-04:00  INFO 28556 --- [usuario] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.067s)
+2026-06-22T16:07:25.251-04:00  INFO 28556 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `usuario`: 2
+2026-06-22T16:07:25.257-04:00  INFO 28556 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Schema `usuario` is up to date. No migration necessary.
+2026-06-22T16:07:25.465-04:00  INFO 28556 --- [usuario] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-22T16:07:25.636-04:00  INFO 28556 --- [usuario] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2026-06-22T16:07:25.760-04:00  INFO 28556 --- [usuario] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-22T16:07:26.609-04:00  INFO 28556 --- [usuario] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22T16:07:26.802-04:00  WARN 28556 --- [usuario] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-22T16:07:26.851-04:00  INFO 28556 --- [usuario] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22T16:07:29.504-04:00  INFO 28556 --- [usuario] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22T16:07:29.612-04:00  INFO 28556 --- [usuario] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T16:07:30.577-04:00  WARN 28556 --- [usuario] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T16:07:32.047-04:00  INFO 28556 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3001 (http) with context path '/'
+2026-06-22T16:07:32.080-04:00  INFO 28556 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Started UsuarioApplication in 13.574 seconds (process running for 14.803)
+2026-06-22T16:10:48.811-04:00  INFO 28556 --- [usuario] [http-nio-3001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-22T16:10:48.812-04:00  INFO 28556 --- [usuario] [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-22T16:10:48.815-04:00  INFO 28556 --- [usuario] [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-22T18:13:50.978-04:00  INFO 10564 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Starting UsuarioApplication using Java 21.0.10 with PID 10564 (C:\Users\Vicky\Desktop\Medilink\usuario\target\classes started by Vicky in C:\Users\Vicky\Desktop\Medilink)
+2026-06-22T18:13:50.984-04:00  INFO 10564 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T18:13:52.906-04:00  INFO 10564 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22T18:13:53.002-04:00  INFO 10564 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 1 JPA repository interface.
+2026-06-22T18:13:53.324-04:00  INFO 10564 --- [usuario] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=78fff474-d47e-37af-a49c-4841e5dc47c6
+2026-06-22T18:13:53.894-04:00  INFO 10564 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3001 (http)
+2026-06-22T18:13:53.924-04:00  INFO 10564 --- [usuario] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-22T18:13:53.924-04:00  INFO 10564 --- [usuario] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-06-22T18:13:54.029-04:00  INFO 10564 --- [usuario] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-22T18:13:54.030-04:00  INFO 10564 --- [usuario] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2949 ms
+2026-06-22T18:13:54.443-04:00  INFO 10564 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-22T18:13:54.704-04:00  INFO 10564 --- [usuario] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6009cd34
+2026-06-22T18:13:54.707-04:00  INFO 10564 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-22T18:13:54.898-04:00  INFO 10564 --- [usuario] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/usuario (MySQL 5.5)
+2026-06-22T18:13:55.081-04:00  INFO 10564 --- [usuario] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.101s)
+2026-06-22T18:13:55.105-04:00  INFO 10564 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `usuario`: 2
+2026-06-22T18:13:55.110-04:00  INFO 10564 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Schema `usuario` is up to date. No migration necessary.
+2026-06-22T18:13:55.231-04:00  INFO 10564 --- [usuario] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-22T18:13:55.318-04:00  INFO 10564 --- [usuario] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2026-06-22T18:13:55.393-04:00  INFO 10564 --- [usuario] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-22T18:13:55.826-04:00  INFO 10564 --- [usuario] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22T18:13:55.912-04:00  WARN 10564 --- [usuario] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-22T18:13:55.936-04:00  INFO 10564 --- [usuario] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22T18:13:56.202-04:00 ERROR 10564 --- [usuario] [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Entity classes [com.medilink.usuario.modelo.entity.Usuario] and [com.medilink.usuario.modelo.Usuario] share the entity name 'Usuario' (entity names must be distinct)
+2026-06-22T18:13:56.203-04:00  WARN 10564 --- [usuario] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity classes [com.medilink.usuario.modelo.entity.Usuario] and [com.medilink.usuario.modelo.Usuario] share the entity name 'Usuario' (entity names must be distinct)
+2026-06-22T18:13:56.204-04:00  INFO 10564 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-22T18:13:56.215-04:00  INFO 10564 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-22T18:13:56.220-04:00  INFO 10564 --- [usuario] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-22T18:13:56.238-04:00  INFO 10564 --- [usuario] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-22T18:13:56.268-04:00 ERROR 10564 --- [usuario] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity classes [com.medilink.usuario.modelo.entity.Usuario] and [com.medilink.usuario.modelo.Usuario] share the entity name 'Usuario' (entity names must be distinct)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.9.jar:6.2.9]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.4.jar:3.5.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.4.jar:3.5.4]
+	at com.medilink.usuario.UsuarioApplication.main(UsuarioApplication.java:10) ~[classes/:na]
+Caused by: org.hibernate.DuplicateMappingException: Entity classes [com.medilink.usuario.modelo.entity.Usuario] and [com.medilink.usuario.modelo.Usuario] share the entity name 'Usuario' (entity names must be distinct)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.addEntityBinding(InFlightMetadataCollectorImpl.java:360) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:262) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:404) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:266) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:281) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:324) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.22.Final.jar:6.6.22.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.9.jar:6.2.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.9.jar:6.2.9]
+	... 15 common frames omitted
+
+2026-06-22T18:16:28.890-04:00  INFO 20176 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Starting UsuarioApplication using Java 21.0.10 with PID 20176 (C:\Users\Vicky\Desktop\Medilink\usuario\target\classes started by Vicky in C:\Users\Vicky\Desktop\Medilink)
+2026-06-22T18:16:28.894-04:00  INFO 20176 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-06-22T18:16:30.400-04:00  INFO 20176 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22T18:16:30.507-04:00  INFO 20176 --- [usuario] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87 ms. Found 1 JPA repository interface.
+2026-06-22T18:16:30.806-04:00  INFO 20176 --- [usuario] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=78fff474-d47e-37af-a49c-4841e5dc47c6
+2026-06-22T18:16:31.474-04:00  INFO 20176 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 3001 (http)
+2026-06-22T18:16:31.501-04:00  INFO 20176 --- [usuario] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-22T18:16:31.502-04:00  INFO 20176 --- [usuario] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-06-22T18:16:31.620-04:00  INFO 20176 --- [usuario] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-22T18:16:31.621-04:00  INFO 20176 --- [usuario] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2641 ms
+2026-06-22T18:16:32.097-04:00  INFO 20176 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-22T18:16:32.383-04:00  INFO 20176 --- [usuario] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d108406
+2026-06-22T18:16:32.386-04:00  INFO 20176 --- [usuario] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-22T18:16:32.599-04:00  INFO 20176 --- [usuario] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/usuario (MySQL 5.5)
+2026-06-22T18:16:32.723-04:00  INFO 20176 --- [usuario] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.079s)
+2026-06-22T18:16:32.754-04:00  INFO 20176 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `usuario`: 2
+2026-06-22T18:16:32.759-04:00  INFO 20176 --- [usuario] [main] o.f.core.internal.command.DbMigrate      : Schema `usuario` is up to date. No migration necessary.
+2026-06-22T18:16:32.920-04:00  INFO 20176 --- [usuario] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-22T18:16:33.003-04:00  INFO 20176 --- [usuario] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2026-06-22T18:16:33.057-04:00  INFO 20176 --- [usuario] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-22T18:16:33.555-04:00  INFO 20176 --- [usuario] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22T18:16:33.663-04:00  WARN 20176 --- [usuario] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-06-22T18:16:33.688-04:00  INFO 20176 --- [usuario] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 5.5.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22T18:16:35.187-04:00  INFO 20176 --- [usuario] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22T18:16:35.262-04:00  INFO 20176 --- [usuario] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T18:16:35.944-04:00  WARN 20176 --- [usuario] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22T18:16:36.928-04:00  INFO 20176 --- [usuario] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 3001 (http) with context path '/'
+2026-06-22T18:16:36.952-04:00  INFO 20176 --- [usuario] [main] c.medilink.usuario.UsuarioApplication    : Started UsuarioApplication in 9.124 seconds (process running for 10.214)
+2026-06-22T18:18:30.073-04:00  INFO 20176 --- [usuario] [http-nio-3001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-22T18:18:30.073-04:00  INFO 20176 --- [usuario] [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-22T18:18:30.075-04:00  INFO 20176 --- [usuario] [http-nio-3001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-22T19:50:00.085-04:00  WARN 20176 --- [usuario] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h8m27s269ms643µs900ns).
+2026-06-22T20:01:57.754-04:00  INFO 20176 --- [usuario] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-22T20:01:57.785-04:00  INFO 20176 --- [usuario] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-22T20:01:57.800-04:00  INFO 20176 --- [usuario] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22T20:01:57.809-04:00  INFO 20176 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-06-22T20:01:57.819-04:00  INFO 20176 --- [usuario] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+>>>>>>> Stashed changes

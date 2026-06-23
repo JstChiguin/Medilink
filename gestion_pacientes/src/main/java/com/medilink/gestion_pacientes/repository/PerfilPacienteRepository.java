@@ -1,7 +1,7 @@
 package com.medilink.gestion_pacientes.repository;
 
 
-import com.medilink.gestion_pacientes.model.PerfilPaciente;
+import com.medilink.gestion_pacientes.model.entity.PerfilPaciente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

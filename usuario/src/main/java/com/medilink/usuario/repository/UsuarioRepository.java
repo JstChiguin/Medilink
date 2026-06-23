@@ -1,6 +1,6 @@
 package com.medilink.usuario.repository;
 
-import com.medilink.usuario.modelo.Usuario;
+import com.medilink.usuario.modelo.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

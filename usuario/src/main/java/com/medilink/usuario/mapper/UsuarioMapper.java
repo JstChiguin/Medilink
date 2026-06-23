@@ -2,9 +2,9 @@ package com.medilink.usuario.mapper;
 
 import com.medilink.usuario.dto.request.UsuarioRequest;
 import com.medilink.usuario.dto.response.UsuarioResponse;
-import com.medilink.usuario.modelo.EstadoUsuario;
-import com.medilink.usuario.modelo.RolUsuario;
-import com.medilink.usuario.modelo.Usuario;
+import com.medilink.usuario.modelo.enums.EstadoUsuario;
+import com.medilink.usuario.modelo.enums.RolUsuario;
+import com.medilink.usuario.modelo.entity.Usuario;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

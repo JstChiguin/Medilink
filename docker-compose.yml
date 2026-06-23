@@ -112,6 +112,34 @@ services:
       - medilink-net
     restart: unless-stopped
 
+  mysql-gestion_pacientes:
+    image: mysql:8.0
+    container_name: medilink-mysql-gestion_pacientes
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: gestion_pacientes
+    ports:
+      - "3314:3306"
+    volumes:
+      - mysql_evaluacion_data:/var/lib/mysql
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  mysql-usuario:
+    image: mysql:8.0
+    container_name: medilink-mysql-usuario
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: usuario
+    ports:
+      - "3314:3306"
+    volumes:
+      - mysql_evaluacion_data:/var/lib/mysql
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
   eureka-server:
     build:
       context: ./eureka-server
@@ -259,13 +287,47 @@ services:
       - medilink-net
     restart: unless-stopped
 
+  gestion_pacientes:
+    build:
+      context: ./gestion_pacientes
+      dockerfile: Dockerfile
+    container_name: medilink-gestion_pacientes
+    ports:
+      - "4002:4002"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mysql-gestion_pacientes
+      - eureka-server
+      - cita
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
+  usuario:
+    build:
+      context: ./usuario
+      dockerfile: Dockerfile
+    container_name: medilink-usuario
+    ports:
+      - "3009:3009"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    depends_on:
+      - mysql-usuario
+      - eureka-server
+      - cita
+    networks:
+      - medilink-net
+    restart: unless-stopped
+
   gateway:
     build:
       context: ./gateway
       dockerfile: Dockerfile
     container_name: medilink-gateway
     ports:
-      - "8080:8080"
+      - "3001:3001"
     environment:
       SPRING_PROFILES_ACTIVE: docker
     depends_on:
@@ -283,7 +345,8 @@ volumes:
   mysql_pagos_data:
   mysql_notificacion_data:
   mysql_evaluacion_data:
-
+  mysql_gestion_pacientes_data:
+  mysql_usuario_data:
 networks:
   medilink-net:
     driver: bridge
