@@ -20,7 +20,7 @@
 	<artifactId>notificacion</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>notificacion</name>
-	<description>Microservicio de Notificaciones MediLink</description>
+	<description>Microservicio de Notificacion MediLink</description>
 
 	<properties>
 		<java.version>17</java.version>

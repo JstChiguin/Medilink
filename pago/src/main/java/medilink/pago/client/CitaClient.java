@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "cita-service", path = "/api/v1/citas")
+@FeignClient(name = "cita", path = "/api/v1/citas")
 public interface CitaClient {
 
     @GetMapping("/{idCita}")

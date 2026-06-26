@@ -20,7 +20,7 @@
 	<artifactId>videollamada</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>videollamada</name>
-	<description>Microservicio de Videollamadas MediLink</description>
+	<description>Microservicio de Videollamada MediLink</description>
 
 	<properties>
 		<java.version>17</java.version>

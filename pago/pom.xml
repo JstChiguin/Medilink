@@ -17,10 +17,10 @@
 	</parent>
 
 	<groupId>medilink</groupId>
-	<artifactId>pagos</artifactId>
+	<artifactId>pago</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>pagos</name>
-	<description>Microservicio de Pagos MediLink</description>
+	<name>pago</name>
+	<description>Microservicio de Pago MediLink</description>
 
 	<properties>
 		<java.version>17</java.version>
