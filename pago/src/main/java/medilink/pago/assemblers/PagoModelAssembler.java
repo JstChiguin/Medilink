@@ -21,7 +21,7 @@ public class PagoModelAssembler implements RepresentationModelAssembler<Pago, En
 
                 linkTo(methodOn(PagoControllerV2.class)
                         .getAllPagos())
-                        .withRel("pagos")
+                        .withRel("pago")
         );
     }
 }

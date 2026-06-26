@@ -1,5 +1,8 @@
 services:
 
+  ##Carpetas y bd (guion bajo _ (snake_case)), Servicios Docker (guion - (kebab-case)), Contenedores (container_name),
+  ##Servicios MySQL (mysql-cita), Contenedores MySQL (medilink-mysql-cita)
+
   mysql-agenda:
     image: mysql:8.0
     container_name: medilink-mysql-agenda
@@ -14,16 +17,16 @@ services:
       - medilink-net
     restart: unless-stopped
 
-  mysql-citas:
+  mysql-cita:
     image: mysql:8.0
-    container_name: medilink-mysql-citas
+    container_name: medilink-mysql-cita
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: citas
+      MYSQL_DATABASE: cita
     ports:
       - "3308:3306"
     volumes:
-      - mysql_citas_data:/var/lib/mysql
+      - mysql_cita_data:/var/lib/mysql
     networks:
       - medilink-net
     restart: unless-stopped
@@ -70,16 +73,16 @@ services:
       - medilink-net
     restart: unless-stopped
 
-  mysql-pagos:
+  mysql-pago:
     image: mysql:8.0
-    container_name: medilink-mysql-pagos
+    container_name: medilink-mysql-pago
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: pagos
+      MYSQL_DATABASE: pago
     ports:
       - "3312:3306"
     volumes:
-      - mysql_pagos_data:/var/lib/mysql
+      - mysql_pago_data:/var/lib/mysql
     networks:
       - medilink-net
     restart: unless-stopped
@@ -114,7 +117,7 @@ services:
 
   eureka-server:
     build:
-      context: ./eureka-server
+      context: ./eureka_server
       dockerfile: Dockerfile
     container_name: medilink-eureka-server
     ports:
@@ -143,13 +146,13 @@ services:
     build:
       context: ./cita
       dockerfile: Dockerfile
-    container_name: medilink-citas
+    container_name: medilink-cita
     ports:
       - "3006:3006"
     environment:
       SPRING_PROFILES_ACTIVE: docker
     depends_on:
-      - mysql-citas
+      - mysql-cita
       - eureka-server
       - agenda-medica
     networks:
@@ -212,13 +215,13 @@ services:
     build:
       context: ./pago
       dockerfile: Dockerfile
-    container_name: medilink-pagos
+    container_name: medilink-pago
     ports:
       - "3010:3010"
     environment:
       SPRING_PROFILES_ACTIVE: docker
     depends_on:
-      - mysql-pagos
+      - mysql-pago
       - eureka-server
       - cita
     networks:
@@ -276,11 +279,11 @@ services:
 
 volumes:
   mysql_agenda_data:
-  mysql_citas_data:
+  mysql_cita_data:
   mysql_videollamada_data:
   mysql_historial_data:
   mysql_receta_data:
-  mysql_pagos_data:
+  mysql_pago_data:
   mysql_notificacion_data:
   mysql_evaluacion_data:
 

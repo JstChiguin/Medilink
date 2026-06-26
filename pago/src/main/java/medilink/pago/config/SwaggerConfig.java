@@ -12,8 +12,8 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("API Pagos")
+                        .title("API Pago")
                         .version("1.0")
-                        .description("Documentación de la API para la gestión de pagos de MediLink"));
+                        .description("Documentación de la API para la gestión de pago de MediLink"));
     }
 }

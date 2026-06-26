@@ -3,29 +3,29 @@ server:
 
 spring:
   application:
-    name: gateway-service
+    name: gateway
 
   cloud:
     gateway:
       server:
         webmvc:
           routes:
-            - id: citas
-              uri: lb://CITAS
+            - id: cita
+              uri: lb://CITA
               predicates:
                 - Path=/api/v1/citas/**,/api/v2/citas/**
 
-            - id: agenda
+            - id: agenda-medica
               uri: lb://AGENDA-MEDICA
               predicates:
                 - Path=/api/v1/agendas/**,/api/v2/agendas/**
 
-            - id: evaluacion
+            - id: evaluacion-atencion
               uri: lb://EVALUACION-ATENCION
               predicates:
                 - Path=/api/v1/evaluaciones/**,/api/v2/evaluaciones/**
 
-            - id: historial
+            - id: historial-clinico
               uri: lb://HISTORIAL-CLINICO
               predicates:
                 - Path=/api/v1/historiales/**,/api/v2/historiales/**
@@ -35,12 +35,12 @@ spring:
               predicates:
                 - Path=/api/v1/notificaciones/**,/api/v2/notificaciones/**
 
-            - id: pagos
-              uri: lb://PAGOS
+            - id: pago
+              uri: lb://PAGO
               predicates:
                 - Path=/api/v1/pagos/**,/api/v2/pagos/**
 
-            - id: receta
+            - id: receta-medica
               uri: lb://RECETA-MEDICA
               predicates:
                 - Path=/api/v1/recetas/**,/api/v2/recetas/**

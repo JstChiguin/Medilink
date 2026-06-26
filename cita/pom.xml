@@ -17,7 +17,7 @@
 	<artifactId>cita</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cita</name>
-	<description>Microservicio de Citas MediLink</description>
+	<description>Microservicio de Cita MediLink</description>
 
 	<properties>
 		<java.version>17</java.version>

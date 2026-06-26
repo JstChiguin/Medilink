@@ -17,7 +17,7 @@
 	<artifactId>receta-medica</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>receta-medica</name>
-	<description>Microservicio de Recetas Médicas MediLink</description>
+	<description>Microservicio de Receta Médica MediLink</description>
 
 	<properties>
 		<java.version>17</java.version>
